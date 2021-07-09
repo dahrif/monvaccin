@@ -59,26 +59,26 @@ $(document).ready(function(){
   
   
 //   // Add a classroom to database
-//   $(".enrg-salle").click(function() {
-//     var Numero = $(".cnumero").val();
-//     var Capacite = $(".ccapacite").val();
-//     var Nb_tableaux = $(".cnb_tableaux").val();
-//     var Formateur = $(".cformateur").val();
+  $(".enrg-salle").click(function() {
+    var Numero = $(".cnumero").val();
+    var Capacite = $(".ccapacite").val();
+    var Nb_tableaux = $(".cnb_tableaux").val();
+    var Formateur = $(".cformateur").val();
   
-//     $.ajax({
-//       url:"/api/addclasses.php",
-//       method:"POST",
-//       data:{
-//         numero :Numero,
-//         capacite :Capacite,
-//         nb_tableaux :Nb_tableaux,
-//         formateur :Formateur
-//       },
-//       success:function(data) {
-//       getall();
-//     }
-//     })
-//   })
+    $.ajax({
+      url:"/api/add.php",
+      method:"POST",
+      data:{
+        numero :Numero,
+        capacite :Capacite,
+        nb_tableaux :Nb_tableaux,
+        formateur :Formateur
+      },
+      success:function(data) {
+      getall();
+    }
+    })
+  })
 
 //   // delete
 
@@ -98,27 +98,27 @@ $(document).ready(function(){
 //       }
 //     })
 //   })
-//   $(".downArrow").click(function() {
-//     $(".add-form").show();
-//   })
-//   $(".update-btn").click(function() {
-//     $(".edit-form").show();
-//   })
-//   $(".save-student").click(function() {
-//   $(".edit-form").hide();
-//   })
-//   $(".enrg-salle").click(function() {
-//   $(".modal").hide();
-//   location.reload();
-//   })
-//   $(".close").click(function() {
-//   $(".add-form").hide();
-//   })
-//   $(".close").click(function() {
-//   $(".edit-form").hide("fast",function() {
-//   getall();
-//   });
+  $(".downArrow").click(function() {
+    $(".add-form").show();
+  })
+  $(".update-btn").click(function() {
+    $(".edit-form").show();
+  })
+  $(".save-student").click(function() {
+  $(".edit-form").hide();
+  })
+  $(".enrg-salle").click(function() {
+  $(".modal").hide();
+  location.reload();
+  })
+  $(".close").click(function() {
+  $(".add-form").hide();
+  })
+  $(".close").click(function() {
+  $(".edit-form").hide("fast",function() {
+  getall();
+  });
   
 
-// })
+})
   })

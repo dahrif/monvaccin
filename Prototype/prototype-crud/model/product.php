@@ -18,25 +18,28 @@ class Product implements JsonSerializable {
 	private $_formateur;
 
 
-	public function __construct($data) {
-		$this->array_fill($data);
+	public function __construct() {
 	}
 
-	public function array_fill( $data)
-	{
-		$this->setId ($data["id"]);
-		$this->setnumero ($data["numero"]);
-		$this->setcapacite ($data["capacite"]);
-		$this->setnb_tableaux ($data["nb_tableaux"]);
-		$this->setformateur ($data["formateur"]);
+	// public function array_fill( $data)
+	// {
+	// 	$this->setId ($data["id"]);
+	// 	$this->setnumero ($data["numero"]);
+	// 	$this->setcapacite ($data["capacite"]);
+	// 	$this->setnb_tableaux ($data["nb_tableaux"]);
+	// 	$this->setformateur ($data["formateur"]);
 
-	}
+	// }
 
-		public function id() { return $this->_id; }
-		public function numero() { return $this->_numero; }
-		public function capacite() { return $this->_capacite; }
-		public function nb_tableaux() { return $this->_nb_tableaux; }
-		public function formateur() { return $this->_formateur; }
+		public function getId() { return $this->_id; }
+
+		public function getnumero() { return $this->_numero; }
+
+		public function getcapacite() { return $this->_capacite; }
+
+		public function getnb_tableaux() { return $this->_nb_tableaux; }
+
+		public function getformateur() { return $this->_formateur; }
 
 
 		public function setId($id){
@@ -44,26 +47,19 @@ class Product implements JsonSerializable {
 		}
 
 		public function setnumero($numero){
-			if (is_string($numero) && strlen($numero) <= 255)
-			{
-					$this->_numero = $numero;
-			}
+			$this->_numero = $numero;
 		}
+
 		public function setcapacite($capacite){
-			if (is_string($capacite) && strlen($capacite) <= 255)
-			{
-					$this->_capacite = $capacite;
-			}
+			$this->_capacite = $capacite;
 		}
 
 		public function setnb_tableaux($nb_tableaux){
-				$this->_nb_tableaux = $nb_tableaux;
+			$this->_nb_tableaux = $nb_tableaux;
 		}
 
 		public function setformateur($formateur){
-				if (is_string($formateur) && strlen($formateur)){
-					$this->_formateur = $formateur;
-				}
+			$this->_formateur = $formateur;
 		}
 
 }
