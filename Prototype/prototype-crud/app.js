@@ -15,50 +15,48 @@ $(document).ready(function(){
   }
   getall();
   
-//   //update-btn-on-click
-//   $("body").on("click",".classeList .update-btn",function() {
-//     $("tr").hide();
-//     $(".edit-form").show();
-//     var index = $(this).parents("tr").index();
-//     $(".edit-form .cnumero").val(studentsList[index]["numero"]);
-//     $(".edit-form .ccapacite").val(studentsList[index]["capacite"]);
-//     $(".edit-form .cnb_tableaux").val(studentsList[index]["nb_tableaux"]);
-//     $(".edit-form .cformateur").val(studentsList[index]["formateur"]);
-//     $(".edit-form .sid").val(studentsList[index]["id"]);
-//     console.log($(".edit-form .sid").val())
+  //update
+
+  $("body").on("click",".classeList .update-btn",function() {
+    $("tr").hide();
+    $(".edit-form").show();
+    var index = $(this).parents("tr").index();
+    $(".edit-form .cnumero").val(studentsList[index]["numero"]);
+    $(".edit-form .ccapacite").val(studentsList[index]["capacite"]);
+    $(".edit-form .cnb_tableaux").val(studentsList[index]["nb_tableaux"]);
+    $(".edit-form .cformateur").val(studentsList[index]["formateur"]);
+    $(".edit-form .sid").val(studentsList[index]["id"]);
    
-//   });
+  });
   
-//   // save-classe-to-database
-//   $(".save-student").click(function() {
-//     var Numero = $(".edit-form .cnumero").val();
-//     var Capacite = $(".edit-form .ccapacite").val();
-//     var Nb_tableaux = $(".edit-form .cnb_tableaux").val();
-//     var Formateur = $(".edit-form .cformateur").val();
-//     var sID = $(".edit-form .sid").val();
+  // save-classe-to-database
+  $(".save-student").click(function() {
+    var Numero = $(".edit-form .cnumero").val();
+    var Capacite = $(".edit-form .ccapacite").val();
+    var Nb_tableaux = $(".edit-form .cnb_tableaux").val();
+    var Formateur = $(".edit-form .cformateur").val();
+    var sID = $(".edit-form .sid").val();
     
-//     console.log(sID)
-//    //send to php file via ajax
-//    $.ajax({
-//     url:"api/editclasses.php",
-//     method:"POST",
-//     data:{
-//       sid : sID,
-//       numero : Numero,
-//       capacite : Capacite,
-//       nb_tableaux : Nb_tableaux,
-//       formateur : Formateur
-//     },
-//         success:function(data) {
-//           console.log(data)
-//         getall();
-//       }
-//   })
-//   })
+   //send to php file via ajax
+   $.ajax({
+    url:"api/update.php",
+    method:"POST",
+    data:{
+      id : sID,
+      numero : Numero,
+      capacite : Capacite,
+      nb_tableaux : Nb_tableaux,
+      formateur : Formateur
+    },
+        success:function(data) {
+        getall();
+      }
+  })
+  })
   
   
   
-//   // Add a classroom to database
+   // Add a classroom to database
   $(".enrg-salle").click(function() {
     var Numero = $(".cnumero").val();
     var Capacite = $(".ccapacite").val();
@@ -80,24 +78,28 @@ $(document).ready(function(){
     })
   })
 
-//   // delete
+   // delete
 
-//   $("body").on("click",".delete-btn",function() {
-//     var index = $(this).parents("tr").index();
-//     $(".classeList .stdID").val(studentsList[index]["id"]);
-//     var studentID =$(".classeList .stdID").val();
-//     $.ajax({
-//       url:"/api/deleteclasses.php",
-//       method:"POST",
-//       data:{
-//         sid :studentID
-//       },
-//       success:function(data) {
-//         $(this).parent().remove();
-//         getall();
-//       }
-//     })
-//   })
+  $("body").on("click",".delete-btn",function() {
+    var index = $(this).parents("tr").index();
+    $(".classeList .stdID").val(studentsList[index]["id"]);
+    var salleID =$(".classeList .stdID").val();
+
+    $.ajax({
+      url:"/api/delete.php",
+      method:"POST",
+      data:{
+        id :salleID
+      },
+      success:function(data) {
+        $(this).parent().remove();
+        getall();
+      }
+    })
+  })
+
+
+
   $(".downArrow").click(function() {
     $(".add-form").show();
   })

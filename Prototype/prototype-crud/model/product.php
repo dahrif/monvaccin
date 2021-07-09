@@ -21,16 +21,6 @@ class Product implements JsonSerializable {
 	public function __construct() {
 	}
 
-	// public function array_fill( $data)
-	// {
-	// 	$this->setId ($data["id"]);
-	// 	$this->setnumero ($data["numero"]);
-	// 	$this->setcapacite ($data["capacite"]);
-	// 	$this->setnb_tableaux ($data["nb_tableaux"]);
-	// 	$this->setformateur ($data["formateur"]);
-
-	// }
-
 		public function getId() { return $this->_id; }
 
 		public function getnumero() { return $this->_numero; }
