@@ -24,10 +24,9 @@ class ProductsManager {
 	//Add Product
 	public function add($product){
 		$dbh = new PDO("mysql:host=localhost;dbname=schoolstd","root","root2021");
-		$req = "INSERT INTO `salles`(`id`,`numero`, `capacite`,`nb_tableaux`,`formateur`) VALUES (:id,:numero,:capacite,:nb_tableaux,:formateur)";
+		$req = "INSERT INTO `salles`(`numero`, `capacite`,`nb_tableaux`,`formateur`) VALUES (:numero,:capacite,:nb_tableaux,:formateur)";
 
 		$addProductQuery = $dbh ->prepare($req);
-		$addProductQuery -> bindParam(":id",$product->getId(),PDO::PARAM_STR);	
 		$addProductQuery -> bindParam(":numero",$product->getnumero(),PDO::PARAM_STR);
 		$addProductQuery -> bindParam(":capacite",$product->getcapacite(),PDO::PARAM_STR);
 		$addProductQuery -> bindParam(":nb_tableaux",$product->getnb_tableaux(),PDO::PARAM_STR);
