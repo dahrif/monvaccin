@@ -43,20 +43,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #3454D1 !important;
-  border-color: #3454D1 !important;
+  background: #3662C1 !important;
+  border-color: #3662C1 !important;
   }
 .btn-primary:hover {
   background: #2c46af !important;
 }
 
 .btn-outline-primary{
-  border-color: #3454D1 !important;
-  color: #3454D1 !important;
+  border-color: #3662C1 !important;
+  color: #3662C1 !important;
 }
 
 .btn-outline-primary:hover{
-  background: #3454D1 !important;
+  background: #3662C1 !important;
   color: #fff !important;
 }
 
@@ -91,9 +91,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-  color: #0B0754;
+  color: #3662C1;
   margin: 10px 0 0 0;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 400;
 }
 
