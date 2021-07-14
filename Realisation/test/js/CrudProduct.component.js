@@ -16,27 +16,14 @@ class Crudvaccination extends React.Component {
 
     // affichage de données par Ajax
 
-    var locationOne = '../api/api-vaccination/getvaccination.php';
-    var locationTwo = '../api/api-vaccin/getvaccin.php';
-    var multipleURL = [locationOne, locationTwo];
-
-    $.each(multipleURL, function (i, url) {
-      $.ajax(url,
-        {
-          type: 'POST',
-          data: {
-            nom_vaccin: nom_vaccin.value,
-            date_vaccination: date_vaccination.value,
-            poids: poids.value,
-          },
-          success: function (data) {
-
-          }
-        }
-      );
-    });
-
-
+    $.getJSON("../api/api-vaccination/getvaccination.php",
+      function (data) {
+        this.setState({ vaccinationsArray: data });
+      }.bind(this))
+      
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        console.log(errorThrown);
+      });
   }
 
 
@@ -230,7 +217,7 @@ class Crudvaccination extends React.Component {
 
 
 
-
+    
 
       </div>
     )
