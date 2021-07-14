@@ -1,10 +1,10 @@
 // Application
-class CrudProduct extends React.Component {
+class Crudvaccination extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      productsArray: []
+      vaccinationsArray: []
     };
   }
   componentDidMount() {
@@ -12,28 +12,27 @@ class CrudProduct extends React.Component {
   }
   chargementDonnees() {
 
-    var productsArray = null;
+    var vaccinationsArray = null;
 
     // affichage de données par Ajax
 
-    $.getJSON("../api/getenfant.php",
+    $.getJSON("../api/api-vaccination/getvaccination.php",
       function (data) {
-        this.setState({ productsArray: data });
+        this.setState({ vaccinationsArray: data });
       }.bind(this))
       .fail(function (jqXHR, textStatus, errorThrown) {
         console.log(errorThrown);
       });
   }
-  //add product
-  addproduct(e) {
+  //add vaccination
+  addvaccination(e) {
     $.ajax({
-      url: "api/add.php",
+      url: "api/api-vaccination/addvaccination.php",
       method: "POST",
       data: {
-        numero: numero.value,
-        capacite: capacite.value,
-        nb_tableaux: nb_tableaux.value,
-        formateur: formateur.value
+        nom_vaccin: nom_vaccin.value,
+        date_vaccination: date_vaccination.value,
+        poids: poids.value,
       },
       success: function (data) {
         this.chargementDonnees()
@@ -43,8 +42,8 @@ class CrudProduct extends React.Component {
     })
     e.preventDefault();
   }
-  //Update product
-  removeproduct(ID) {
+  // Update vaccination
+  removevaccination(ID) {
     $.ajax({
       url: "/api/delete.php",
       method: "POST",
@@ -58,16 +57,16 @@ class CrudProduct extends React.Component {
     })
 
   }
-  // Remove product
-  updateproduct(ID) {
+  // Remove vaccination
+  updatevaccination(ID) {
     $.ajax({
       url: "api/update.php",
       method: "POST",
       data: {
         id: ID,
-        numero: cNumero.value,
-        capacite: cCapacite.value,
-        nb_tableaux: cNb_tableaux.value,
+        nom_vaccin: cnom_vaccin.value,
+        date_vaccination: cdate_vaccination.value,
+        poids: cpoids.value,
         formateur: cFormateur.value
       },
       success: function (data) {
@@ -85,13 +84,13 @@ class CrudProduct extends React.Component {
   }
 
   render() {
-    let productsArray = this.state.productsArray.map((product) => {
+    let vaccinationsArray = this.state.vaccinationsArray.map((vaccination) => {
       return (
-        <Product
-          key={product.id}
-          product={product}
-          onClickClose={this.removeproduct.bind(this, product.id)}
-          onClickUpdate={this.updateproduct.bind(this, product.id)}
+        <vaccination
+          key={vaccination.id_vaccination}
+          vaccination={vaccination}
+          onClickClose={this.removevaccination.bind(this, vaccination.id)}
+          onClickUpdate={this.updatevaccination.bind(this, vaccination.id)}
 
         />
       )
@@ -100,23 +99,20 @@ class CrudProduct extends React.Component {
     return (
       <div className="container">
         <div className="col-sm-6">
-          <span className="btn mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i class="fa-solid fa-plus" /></span>
+          <span className="btn mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="fa-solid fa-plus" /></span>
         </div>
 
         <table className="table col-6">
-          <thead className="thead-dark">
+          <thead className="thead-light">
             <tr>
 
-              <th scope="col">numero</th>
-              <th scope="col">capacite</th>
-              <th scope="col">nb_tablaux</th>
-              <th scope="col">formateur</th>
-              <th scope="col"></th>
-
+              <th scope="col">Nom vaccin</th>
+              <th scope="col">Date vaccination</th>
+              <th scope="col">Poids</th>
             </tr>
           </thead>
           <tbody>
-            {productsArray}
+            {vaccinationsArray}
           </tbody>
         </table>
 
@@ -133,29 +129,23 @@ class CrudProduct extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form className="add-form" onSubmit={this.addproduct.bind(this)}>
+                <form className="add-form" onSubmit={this.addvaccination.bind(this)}>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="input1">Numero</label>
-                      <input type="number" className="form-control cnumero" id="numero" />
+                      <label htmlFor="nom_vaccin">nom_vaccin</label>
+                      <input type="number" className="form-control cnom_vaccin" id="nom_vaccin" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="input2">Capacité</label>
-                      <input type="text" name defaultValue className="form-control ccapacite" id="capacite" />
+                      <label htmlFor="date_vaccination">date_vaccination</label>
+                      <input type="text" name defaultValue className="form-control cdate_vaccination" id="date_vaccination" />
                     </div>
                   </div>
                   <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="input3">Nombre de tableaux</label>
-                      <input type="text" name defaultValue className="form-control cnb_tableaux" id="nb_tableaux" />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="input4">Formateur</label>
-                      <input type="text" name defaultValue className="form-control cformateur" id="formateur" />
+                    <div className="col-12">
+                      <label htmlFor="poids">poids</label>
+                      <input type="text" name defaultValue className="form-control cpoids" id="poids" />
                     </div>
                   </div>
                   <div className="modal-footer">
@@ -180,31 +170,26 @@ class CrudProduct extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form className="" onSubmit={this.updateproduct.bind(this)}>
+                <form className="" onSubmit={this.updatevaccination.bind(this)}>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="input1">Numero</label>
-                      <input type="number" className="form-control cnumero" id="cNumero" />
+                      <label htmlFor="input1">nom_vaccin</label>
+                      <input type="number" className="form-control cnom_vaccin" id="cnom_vaccin" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="input2">Capacité</label>
-                      <input type="text" name defaultValue className="form-control ccapacite" id="cCapacite" />
+                      <label htmlFor="input2">date_vaccination</label>
+                      <input type="text" name defaultValue className="form-control cdate_vaccination" id="cdate_vaccination" />
                     </div>
                   </div>
                   <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="input3">Nombre de tableaux</label>
-                      <input type="text" name defaultValue className="form-control cnb_tableaux" id="cNb_tableaux" />
+                    <div className="col-12">
+                      <label htmlFor="input2">Poids</label>
+                      <input type="text" name defaultValue className="form-control cpoids" id="cpoids" />
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="input4">Formateur</label>
-                      <input type="text" name defaultValue className="form-control cformateur" id="cFormateur" />
-                    </div>
-                  </div>
+
                   <input type="hidden" name defaultValue className="sid" />
                   <div className="modal-footer">
                     <button type="submit" className="btn btn-primary save-student">Enregistrer les modification</button>
@@ -227,41 +212,7 @@ class CrudProduct extends React.Component {
 
 
 
-        {/* 
-                <form id="form-add" className="form-horizontal" onSubmit={this.addproduct.bind(this)}>
-                <div className="form-row">
-        <div className="col-12">
-          <label htmlFor="input1">Numero</label>
-          <input type="number" className="form-control cnumero" id="numero" />
-        </div>
-      </div>
-
-      <div className="form-row">
-        <div className="col-12">
-          <label htmlFor="input2">Capacité</label>
-          <input type="text" className="form-control ccapacite" id="capacite" />
-        </div>
-      </div>
-
-
-      <div className="form-row">
-        <div className="form-group col-12">
-          <label htmlFor="input3">Nombre de tableaux</label>
-          <input type="text" className="form-control cnb_tableaux" id="nb_tableaux" />
-        </div>
-      </div>
-
-      <div className="form-row">
-        <div className="form-group col-12">
-          <label htmlFor="input4">Formateur</label>
-          <input type="text" className="form-control cformateur" id="formateur" />
-        </div>
-        <button type="submit" className="btn btn-primary enrg-salle">Ajouter</button>
-
-      </div>
-
-     
-            </form>  */}
+    
 
       </div>
     )

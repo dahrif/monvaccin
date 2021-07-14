@@ -7,13 +7,16 @@ class Vaccination implements JsonSerializable {
              'id_vaccination' => $this->_id_vaccination,
              'id_vaccin' => $this->_id_vaccin,
              'id_enfant' => $this->_id_enfant,
+			 'nom_vaccin' => $this->_nom_vaccin,
              'date_vaccination' => $this->_date_vaccination,
              'poids' => $this->_poids,
+
         );
     }
 	private $_id_vaccination;
 	private $_id_vaccin;
 	private $_id_enfant;
+	private $_nom_vaccin;
 	private $_date_vaccination;
 	private $_poids;
 
@@ -42,6 +45,10 @@ class Vaccination implements JsonSerializable {
 
 		public function setid_enfant($id_enfant){
 			$this->_id_enfant = $id_enfant;
+		}
+
+		public function setnom_vaccin($nom_vaccin){
+			$this->_nom_vaccin = $nom_vaccin;
 		}
 
 		public function setdate_vaccination($date_vaccination){

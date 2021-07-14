@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/../model/parent.php');
+require_once(__DIR__.'../../model/parent.php');
 class ParentManager {
 
 	//Get Product
@@ -16,6 +16,7 @@ class ParentManager {
 			$itm->setgenre($row["genre"]);
 			$itm->setemail($row["email"]);
             $itm->setmot_de_passe($row["mot_de_passe"]);
+			$itm->settelephone($row["telephone"]);
 
 
 			array_push($stack, $itm);

@@ -78,5 +78,7 @@ class Parents implements JsonSerializable {
 			$this->_photo_profile = $photo_profile;
 		}
 
+
+
 }
 ?>

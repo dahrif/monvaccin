@@ -7,7 +7,7 @@ class enfantManager {
 	public function getList(){
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
 		$stack = array();
-		$req = 'SELECT * FROM enfant';
+		$req = 'SELECT * FROM enfant LEFT JOIN parent ON enfant.id_parent=parent.id_parent ORDER BY enfant.id_enfant ';
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
 			$itm = new Enfant($row);
@@ -17,8 +17,9 @@ class enfantManager {
 			$itm->setdate_naissance($row["date_naissance"]);
 			$itm->setpoids_naissance($row["poids_naissance"]);
             $itm->setphoto_enfant($row["photo_enfant"]);
+			$itm->setnom_parent($row["prenom"]);
 
-            
+
 			array_push($stack, $itm);
 		}
 		return $stack;
