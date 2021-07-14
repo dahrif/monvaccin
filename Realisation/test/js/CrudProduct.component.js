@@ -16,14 +16,30 @@ class Crudvaccination extends React.Component {
 
     // affichage de données par Ajax
 
-    $.getJSON("../api/api-vaccination/getvaccination.php",
-      function (data) {
-        this.setState({ vaccinationsArray: data });
-      }.bind(this))
-      .fail(function (jqXHR, textStatus, errorThrown) {
-        console.log(errorThrown);
-      });
+    var locationOne = '../api/api-vaccination/getvaccination.php';
+    var locationTwo = '../api/api-vaccin/getvaccin.php';
+    var multipleURL = [locationOne, locationTwo];
+
+    $.each(multipleURL, function (i, url) {
+      $.ajax(url,
+        {
+          type: 'POST',
+          data: {
+            nom_vaccin: nom_vaccin.value,
+            date_vaccination: date_vaccination.value,
+            poids: poids.value,
+          },
+          success: function (data) {
+
+          }
+        }
+      );
+    });
+
+
   }
+
+
   //add vaccination
   addvaccination(e) {
     $.ajax({
@@ -43,12 +59,12 @@ class Crudvaccination extends React.Component {
     e.preventDefault();
   }
   // Update vaccination
-  removevaccination(ID) {
+  removevaccination(id_vaccination) {
     $.ajax({
-      url: "/api/delete.php",
+      url: "/api/api-vaccination/deletevaccination.php",
       method: "POST",
       data: {
-        id: ID
+        id_vaccination: id_vaccination
       },
       success: function (data) {
         //   $(this).parent().remove();
@@ -86,10 +102,10 @@ class Crudvaccination extends React.Component {
   render() {
     let vaccinationsArray = this.state.vaccinationsArray.map((vaccination) => {
       return (
-        <vaccination
+        <Vaccination
           key={vaccination.id_vaccination}
           vaccination={vaccination}
-          onClickClose={this.removevaccination.bind(this, vaccination.id)}
+          onClickClose={this.removevaccination.bind(this, vaccination.id_vaccination)}
           onClickUpdate={this.updatevaccination.bind(this, vaccination.id)}
 
         />
@@ -109,6 +125,8 @@ class Crudvaccination extends React.Component {
               <th scope="col">Nom vaccin</th>
               <th scope="col">Date vaccination</th>
               <th scope="col">Poids</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -132,13 +150,13 @@ class Crudvaccination extends React.Component {
                 <form className="add-form" onSubmit={this.addvaccination.bind(this)}>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="nom_vaccin">nom_vaccin</label>
-                      <input type="number" className="form-control cnom_vaccin" id="nom_vaccin" />
+                      <label htmlFor="nom_vaccin">nom vaccin</label>
+                      <input type="text" className="form-control cnom_vaccin" id="nom_vaccin" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="date_vaccination">date_vaccination</label>
+                      <label htmlFor="date_vaccination">date vaccination</label>
                       <input type="text" name defaultValue className="form-control cdate_vaccination" id="date_vaccination" />
                     </div>
                   </div>
@@ -212,7 +230,7 @@ class Crudvaccination extends React.Component {
 
 
 
-    
+
 
       </div>
     )

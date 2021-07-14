@@ -7,7 +7,7 @@ class Vaccination extends React.Component {
 
         return (
             <tr>
-                <td>{this.props.vaccin.nom_vaccin}</td>
+                <td>{this.props.vaccination.nom_vaccin}</td>
                 <td>{this.props.vaccination.date_vaccination}</td>
                 <td>{this.props.vaccination.poids}</td>
                 <td><i className="close" onClick={this.props.onClickClose}><svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" classname="bi bi-trash-fill" viewBox="0 0 16 16">

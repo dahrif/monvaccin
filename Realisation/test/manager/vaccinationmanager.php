@@ -40,7 +40,7 @@ class VaccinationManager {
 	public function delete($id_vaccination){
     	
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin", "root", "root2021");
-		$req = "DELETE FROM vaccination WHERE id_vaccination = $id_vaccination ";
+		$req = "DELETE FROM vaccination WHERE id_vaccination = $id_vaccination";
         $deletevaccination= $dbh->prepare($req);
         $deletevaccination->execute();
     }

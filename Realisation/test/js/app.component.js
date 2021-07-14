@@ -65,7 +65,7 @@ class App extends React.Component {
           <div className="float-right d-none d-sm-block">
             <b>Version</b> 3.1.0
           </div>
-          <strong>Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+          <strong>Copyright © 2021 <a href="#">monVaccin</a>.</strong> Tous droits réservés.
         </footer>
         {/* Control Sidebar */}
         <aside className="control-sidebar control-sidebar-dark">
