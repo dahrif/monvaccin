@@ -964,12 +964,12 @@ var FullCalendar = (function (exports) {
             dur.milliseconds;
     }
     // Advanced Math
-    function wholeDivideDurations(numerator, denominator) {
+    function wholeDivideDurations(numerator, defirstnameinator) {
         var res = null;
         for (var i = 0; i < INTERNAL_UNITS.length; i += 1) {
             var unit = INTERNAL_UNITS[i];
-            if (denominator[unit]) {
-                var localRes = numerator[unit] / denominator[unit];
+            if (defirstnameinator[unit]) {
+                var localRes = numerator[unit] / defirstnameinator[unit];
                 if (!isInt(localRes) || (res !== null && res !== localRes)) {
                     return null;
                 }
@@ -982,7 +982,7 @@ var FullCalendar = (function (exports) {
         }
         return res;
     }
-    function greatestDurationDenominator(dur) {
+    function greatestDurationDefirstnameinator(dur) {
         var ms = dur.milliseconds;
         if (ms) {
             if (ms % 1000 !== 0) {
@@ -5586,9 +5586,9 @@ var FullCalendar = (function (exports) {
         if (durationInput) {
             duration = createDurationCached(durationInput);
             if (duration) { // valid?
-                var denom = greatestDurationDenominator(duration);
-                durationUnit = denom.unit;
-                if (denom.value === 1) {
+                var defirstname = greatestDurationDefirstnameinator(duration);
+                durationUnit = defirstname.unit;
+                if (defirstname.value === 1) {
                     singleUnit = durationUnit;
                     singleUnitOverrides = overrideConfigs[durationUnit] ? overrideConfigs[durationUnit].rawOptions : {};
                 }
@@ -5750,7 +5750,7 @@ var FullCalendar = (function (exports) {
             }
             else {
                 duration = this.getFallbackDuration();
-                unit = greatestDurationDenominator(duration).unit;
+                unit = greatestDurationDefirstnameinator(duration).unit;
                 range = this.buildRangeFromDuration(date, direction, duration, unit);
             }
             return { duration: duration, unit: unit, range: range };
@@ -5779,7 +5779,7 @@ var FullCalendar = (function (exports) {
             return { start: start, end: end };
         };
         // Builds the "current" range when it is specified as an explicit duration.
-        // `unit` is the already-computed greatestDurationDenominator unit of duration.
+        // `unit` is the already-computed greatestDurationDefirstnameinator unit of duration.
         DateProfileGenerator.prototype.buildRangeFromDuration = function (date, direction, duration, unit) {
             var _a = this.props, dateEnv = _a.dateEnv, dateAlignment = _a.dateAlignment;
             var start;
@@ -5791,7 +5791,7 @@ var FullCalendar = (function (exports) {
                 if (dateIncrement) {
                     // use the smaller of the two units
                     if (asRoughMs(dateIncrement) < asRoughMs(duration)) {
-                        dateAlignment = greatestDurationDenominator(dateIncrement).unit;
+                        dateAlignment = greatestDurationDefirstnameinator(dateIncrement).unit;
                     }
                     else {
                         dateAlignment = unit;
@@ -14628,7 +14628,7 @@ var FullCalendar = (function (exports) {
     exports.getUnequalProps = getUnequalProps;
     exports.globalLocales = globalLocales;
     exports.globalPlugins = globalPlugins;
-    exports.greatestDurationDenominator = greatestDurationDenominator;
+    exports.greatestDurationDefirstnameinator = greatestDurationDefirstnameinator;
     exports.groupIntersectingEntries = groupIntersectingEntries;
     exports.guid = guid;
     exports.hasBgRendering = hasBgRendering;

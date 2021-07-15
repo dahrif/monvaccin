@@ -20,7 +20,7 @@ $.extend( $.validator.messages, {
 	date: "Si us plau, escriu una data vàlida.",
 	dateISO: "Si us plau, escriu una data (ISO) vàlida.",
 	number: "Si us plau, escriu un número enter vàlid.",
-	digits: "Si us plau, escriu només dígits.",
+	digits: "Si us plau, escriu firstnameés dígits.",
 	creditcard: "Si us plau, escriu un número de tarjeta vàlid.",
 	equalTo: "Si us plau, escriu el mateix valor de nou.",
 	extension: "Si us plau, escriu un valor amb una extensió acceptada.",

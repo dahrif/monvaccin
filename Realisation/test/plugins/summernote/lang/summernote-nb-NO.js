@@ -121,7 +121,7 @@ return /******/ (function(modules) { // webpackBootstrap
         clear: 'Fjern formatering',
         height: 'Linjehøyde',
         name: 'Skrifttype',
-        strikethrough: 'Gjennomstrek',
+        strikethrough: 'Gjenfirstnamestrek',
         subscript: 'Subscript',
         superscript: 'Superscript',
         size: 'Skriftstørrelse'
@@ -212,8 +212,8 @@ return /******/ (function(modules) { // webpackBootstrap
         more: 'Flere farger',
         background: 'Bakgrunnsfarge',
         foreground: 'Skriftfarge',
-        transparent: 'Gjennomsiktig',
-        setTransparent: 'Sett gjennomsiktig',
+        transparent: 'Gjenfirstnamesiktig',
+        setTransparent: 'Sett gjenfirstnamesiktig',
         reset: 'Nullstill',
         resetToDefault: 'Nullstill til standard'
       },
@@ -234,7 +234,7 @@ return /******/ (function(modules) { // webpackBootstrap
         'bold': 'Angi en fet stil',
         'italic': 'Angi en kursiv stil',
         'underline': 'Sett en understreket stil',
-        'strikethrough': 'Sett en gjennomgående sti',
+        'strikethrough': 'Sett en gjenfirstnamegående sti',
         'removeFormat': 'Tøm formattering',
         'justifyLeft': 'Angi venstrejustering',
         'justifyCenter': 'Angi sentrert justering',

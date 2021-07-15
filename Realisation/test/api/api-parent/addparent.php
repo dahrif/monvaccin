@@ -3,12 +3,12 @@ require_once (__DIR__.'/../../manager/parentmanager.php');
 
 $parent = new Parents();
 $parent->setid_parent($_POST["id_parent"]);
-$parent->setnom($_POST["nom"]);
-$parent->setprenom($_POST["prenom"]);
+$parent->setfirstname($_POST["firstname"]);
+$parent->setlastname($_POST["lastname"]);
 $parent->setgenre($_POST["genre"]);
 $parent->setemail($_POST["email"]);
-$parent->setmot_de_passe($_POST["mot_de_passe"]);
-$parent->settelephone($_POST["telephone"]);
+$parent->setpassword($_POST["password"]);
+$parent->setphone($_POST["phone"]);
 $parent->setphoto_profile($_POST["photo_profile"]);
 $addparentManager = null;
 $addparentManager =  new parentManager(); 

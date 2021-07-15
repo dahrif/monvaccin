@@ -10,7 +10,7 @@ class Enfant implements JsonSerializable {
              'date_naissance' => $this->_date_naissance,
              'poids_naissance' => $this->_poids_naissance,
              'photo_enfant' => $this->_photo_enfant,
-			 'nom' => $this->_nom,
+			 'firstname_parent' => $this->_firstname_parent,
 
 
         );
@@ -21,7 +21,7 @@ class Enfant implements JsonSerializable {
 	private $_date_naissance;
 	private $_poids_naissance;
     private $_photo_enfant;
-	private $_nom;
+	private $_firstname_parent;
 
 
 	public function __construct() {
@@ -65,8 +65,8 @@ class Enfant implements JsonSerializable {
 			$this->_photo_enfant = $photo_enfant;
 		}
 
-		public function setnom_parent($nom){
-			$this->_nom = $nom;
+		public function setfirstname_parent($firstname){
+			$this->_firstname = $firstname;
 		}
 
 }

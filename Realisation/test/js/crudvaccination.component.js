@@ -4,12 +4,14 @@ class Crudvaccination extends React.Component {
     super(props)
 
     this.state = {
-      vaccinationsArray: []
+      vaccinationsArray: [],
     };
   }
   componentDidMount() {
     this.chargementDonnees();
   }
+
+
   chargementDonnees() {
 
     var vaccinationsArray = null;
@@ -102,14 +104,15 @@ class Crudvaccination extends React.Component {
     return (
       <div className="container">
         <div className="col-sm-6">
-          <span className="btn mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="fa-solid fa-plus" /></span>
+          <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
+          </button>
         </div>
 
-        <table className="table col-6">
+        <table className="table col-12">
           <thead className="thead-light">
             <tr>
 
-              <th scope="col">Nom vaccin</th>
+              <th scope="col">nom vaccin</th>
               <th scope="col">Date vaccination</th>
               <th scope="col">Poids</th>
               <th scope="col"></th>
@@ -117,7 +120,7 @@ class Crudvaccination extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {vaccinationsArray}
+       {vaccinationsArray}
           </tbody>
         </table>
 
@@ -156,6 +159,7 @@ class Crudvaccination extends React.Component {
                   <div className="modal-footer">
                     <button type="submit" className="btn btn-primary enrg-salle">Ajouter</button>
                   </div>
+                  
                 </form>
               </div>
 
@@ -198,6 +202,7 @@ class Crudvaccination extends React.Component {
                   <input type="hidden" name defaultValue className="sid" />
                   <div className="modal-footer">
                     <button type="submit" className="btn btn-primary save-student">Enregistrer les modification</button>
+                    
                   </div>
                 </form>
               </div>

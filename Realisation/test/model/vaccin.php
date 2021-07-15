@@ -21,7 +21,7 @@ class Vaccin implements JsonSerializable {
 
 		public function getid_vaccin() { return $this->_id_vaccin; }
 
-		public function getnom_vaccin() { return $this->_nom_vaccin; }
+		public function getnomvaccin() { return $this->_nom_vaccin; }
 
 		public function getdescription() { return $this->_description; }
 

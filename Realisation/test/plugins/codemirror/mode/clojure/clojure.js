@@ -52,7 +52,7 @@ CodeMirror.defineMode("clojure", function (options) {
       "declare", "dedupe", "default-data-readers", "definline", "definterface",
       "defmacro", "defmethod", "defmulti", "defn", "defn-", "defonce",
       "defprotocol", "defrecord", "defstruct", "deftype", "delay", "delay?",
-      "deliver", "denominator", "deref", "derive", "descendants", "destructure",
+      "deliver", "defirstnameinator", "deref", "derive", "descendants", "destructure",
       "disj", "disj!", "dissoc", "dissoc!", "distinct", "distinct?", "doall",
       "dorun", "doseq", "dosync", "dotimes", "doto", "double", "double-array",
       "double?", "doubles", "drop", "drop-last", "drop-while", "eduction",

@@ -8294,7 +8294,7 @@
     }
 
     hooks.defineLocale('el', {
-        monthsNominativeEl: 'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
+        monthsfirstnameinativeEl: 'Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος'.split(
             '_'
         ),
         monthsGenitiveEl: 'Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου'.split(
@@ -8302,7 +8302,7 @@
         ),
         months: function (momentToFormat, format) {
             if (!momentToFormat) {
-                return this._monthsNominativeEl;
+                return this._monthsfirstnameinativeEl;
             } else if (
                 typeof format === 'string' &&
                 /D/.test(format.substring(0, format.indexOf('MMMM')))
@@ -8310,7 +8310,7 @@
                 // if there is a day number before 'MMMM'
                 return this._monthsGenitiveEl[momentToFormat.month()];
             } else {
-                return this._monthsNominativeEl[momentToFormat.month()];
+                return this._monthsfirstnameinativeEl[momentToFormat.month()];
             }
         },
         monthsShort: 'Ιαν_Φεβ_Μαρ_Απρ_Μαϊ_Ιουν_Ιουλ_Αυγ_Σεπ_Οκτ_Νοε_Δεκ'.split('_'),
@@ -14540,7 +14540,7 @@
 
     //! moment.js locale configuration
 
-    var monthsNominative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
+    var monthsfirstnameinative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
             '_'
         ),
         monthsSubjective = 'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
@@ -14588,11 +14588,11 @@
     hooks.defineLocale('pl', {
         months: function (momentToFormat, format) {
             if (!momentToFormat) {
-                return monthsNominative;
+                return monthsfirstnameinative;
             } else if (/D MMMM/.test(format)) {
                 return monthsSubjective[momentToFormat.month()];
             } else {
-                return monthsNominative[momentToFormat.month()];
+                return monthsfirstnameinative[momentToFormat.month()];
             }
         },
         monthsShort: 'sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru'.split('_'),
@@ -17177,7 +17177,7 @@
     }
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
-                nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+                firstnameinative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
                     '_'
                 ),
                 accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
@@ -17190,19 +17190,19 @@
             nounCase;
 
         if (m === true) {
-            return weekdays['nominative']
+            return weekdays['firstnameinative']
                 .slice(1, 7)
-                .concat(weekdays['nominative'].slice(0, 1));
+                .concat(weekdays['firstnameinative'].slice(0, 1));
         }
         if (!m) {
-            return weekdays['nominative'];
+            return weekdays['firstnameinative'];
         }
 
         nounCase = /(\[[ВвУу]\]) ?dddd/.test(format)
             ? 'accusative'
             : /\[?(?:минулої|наступної)? ?\] ?dddd/.test(format)
             ? 'genitive'
-            : 'nominative';
+            : 'firstnameinative';
         return weekdays[nounCase][m.day()];
     }
     function processHoursFunction(str) {

@@ -6087,7 +6087,7 @@ function cloneFixAttributes( src, dest ) {
 
 	if ( nodeName === "object" ) {
 		// IE6-10 improperly clones children of object elements using classid.
-		// IE10 throws NoModificationAllowedError if parent is null, #12132.
+		// IE10 throws firstnameodificationAllowedError if parent is null, #12132.
 		if ( dest.parentNode ) {
 			dest.outerHTML = src.outerHTML;
 		}

@@ -1503,7 +1503,7 @@
                         if (!(this instanceof y)) return new y(e, t, a);
                         this.dependencyLib = n.default, this.el = void 0, this.events = {}, this.maskset = void 0, 
                         !0 !== a && ("[object Object]" === Object.prototype.toString.call(e) ? t = e : (t = t || {}, 
-                        e && (t.alias = e)), this.opts = n.default.extend(!0, {}, this.defaults, t), this.noMasksCache = t && void 0 !== t.definitions, 
+                        e && (t.alias = e)), this.opts = n.default.extend(!0, {}, this.defaults, t), this.firstnameasksCache = t && void 0 !== t.definitions, 
                         this.userOptions = t || {}, b(this.opts.alias, t, this.opts)), this.refreshValue = !1, 
                         this.undoValue = void 0, this.$el = void 0, this.skipKeyPressEvent = !1, this.skipInputEvent = !1, 
                         this.validationEvent = !1, this.ignorable = !1, this.maxLength, this.mouseEnter = !1, 
@@ -1555,9 +1555,9 @@
                                 t.isRTL = !0);
                                 return Object.keys(a).length;
                             }(e, s, n.default.extend(!0, {}, t.userOptions), t.dataAttribute)) {
-                                var l = (0, o.generateMaskSet)(s, t.noMasksCache);
+                                var l = (0, o.generateMaskSet)(s, t.firstnameasksCache);
                                 void 0 !== l && (void 0 !== e.inputmask && (e.inputmask.opts.autoUnmask = !0, e.inputmask.remove()), 
-                                e.inputmask = new y(void 0, void 0, !0), e.inputmask.opts = s, e.inputmask.noMasksCache = t.noMasksCache, 
+                                e.inputmask = new y(void 0, void 0, !0), e.inputmask.opts = s, e.inputmask.firstnameasksCache = t.firstnameasksCache, 
                                 e.inputmask.userOptions = n.default.extend(!0, {}, t.userOptions), e.inputmask.el = e, 
                                 e.inputmask.$el = (0, n.default)(e), e.inputmask.maskset = l, n.default.data(e, k, t.userOptions), 
                                 i.mask.call(e.inputmask));
@@ -1569,7 +1569,7 @@
                         this.el && !0 !== t && this.mask(this.el), this) : void 0;
                     },
                     unmaskedvalue: function(e) {
-                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), 
+                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache), 
                         void 0 === this.el || void 0 !== e) {
                             var t = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
                             c.checkVal.call(this, void 0, !1, !1, t), "function" == typeof this.opts.onBeforeWrite && this.opts.onBeforeWrite.call(this, void 0, l.getBuffer.call(this), 0, this.opts);
@@ -1591,18 +1591,18 @@
                         return this.el;
                     },
                     getemptymask: function() {
-                        return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), 
+                        return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache), 
                         l.getBufferTemplate.call(this).join("");
                     },
                     hasMaskedValue: function() {
                         return !this.opts.autoUnmask;
                     },
                     isComplete: function() {
-                        return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), 
+                        return this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache), 
                         u.isComplete.call(this, l.getBuffer.call(this));
                     },
                     getmetadata: function() {
-                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), 
+                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache), 
                         Array.isArray(this.maskset.metadata)) {
                             var e = s.getMaskTemplate.call(this, !0, 0, !1).join("");
                             return this.maskset.metadata.forEach((function(t) {
@@ -1612,7 +1612,7 @@
                         return this.maskset.metadata;
                     },
                     isValid: function(e) {
-                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache), 
+                        if (this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache), 
                         e) {
                             var t = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
                             c.checkVal.call(this, void 0, !0, !1, t);
@@ -1621,7 +1621,7 @@
                         return a.splice(i, n + 1 - i), u.isComplete.call(this, a) && e === (this.isRTL ? l.getBuffer.call(this).slice().reverse().join("") : l.getBuffer.call(this).join(""));
                     },
                     format: function(e, t) {
-                        this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.noMasksCache);
+                        this.maskset = this.maskset || (0, o.generateMaskSet)(this.opts, this.firstnameasksCache);
                         var a = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, e, this.opts) || e).split("");
                         c.checkVal.call(this, void 0, !0, !1, a);
                         var i = this.isRTL ? l.getBuffer.call(this).slice().reverse().join("") : l.getBuffer.call(this).join("");

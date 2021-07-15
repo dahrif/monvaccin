@@ -11,7 +11,7 @@
 
     //! moment.js locale configuration
 
-    var monthsNominative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
+    var monthsfirstnameinative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
             '_'
         ),
         monthsSubjective = 'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
@@ -59,11 +59,11 @@
     var pl = moment.defineLocale('pl', {
         months: function (momentToFormat, format) {
             if (!momentToFormat) {
-                return monthsNominative;
+                return monthsfirstnameinative;
             } else if (/D MMMM/.test(format)) {
                 return monthsSubjective[momentToFormat.month()];
             } else {
-                return monthsNominative[momentToFormat.month()];
+                return monthsfirstnameinative[momentToFormat.month()];
             }
         },
         monthsShort: 'sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru'.split('_'),

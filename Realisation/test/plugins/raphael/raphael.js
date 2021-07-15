@@ -1502,13 +1502,13 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         }
         var nx = (x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4),
             ny = (x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4),
-            denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+            defirstnameinator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
 
-        if (!denominator) {
+        if (!defirstnameinator) {
             return;
         }
-        var px = nx / denominator,
-            py = ny / denominator,
+        var px = nx / defirstnameinator,
+            py = ny / defirstnameinator,
             px2 = +px.toFixed(2),
             py2 = +py.toFixed(2);
         if (

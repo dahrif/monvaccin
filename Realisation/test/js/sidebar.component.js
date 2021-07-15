@@ -27,7 +27,7 @@ class SideBar extends React.Component {
                  with font-awesome or any other icon font library */}
                 <li className="nav-item menu-open">
         <a href="#" className="nav-link active">
-          <i className="nav-icon fas fa-tachometer-alt" />
+        <img src="childs.png" witdh="20px" height="20px" />
           <p>
             Mes enfants
             <i className="right fas fa-angle-left" />
@@ -35,20 +35,21 @@ class SideBar extends React.Component {
         </a>
         <ul className="nav nav-treeview">
           <li className="nav-item">
+            
             <a href="./index.html" className="nav-link active">
-              <i className="far fa-circle nav-icon" />
-              <p>1</p>
+              
+            
+              <p><crudEnfant /></p>
             </a>
           </li>
-          <li className="nav-item">
-            <a href="./index2.html" className="nav-link">
-              <i className="far fa-circle nav-icon" />
-              <p>2</p>
-            </a>
-          </li>
+
         </ul>
       </li>
+
+
               </ul>
+
+              <a className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter2" name="" id="" className="btn btn-primary text-white text-center rounded-pill" href="#" role="button">Ajouter un enfant</a>
 
 
             </nav>

@@ -81,7 +81,7 @@ $(function () {
       regions: [{
         values: visitorsData,
         scale: ['#ffffff', '#0154ad'],
-        normalizeFunction: 'polynomial'
+        normalizeFunction: 'polyfirstnameial'
       }]
     },
     onRegionLabelShow: function (e, el, code) {

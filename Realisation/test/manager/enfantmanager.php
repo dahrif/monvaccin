@@ -17,7 +17,7 @@ class enfantManager {
 			$itm->setdate_naissance($row["date_naissance"]);
 			$itm->setpoids_naissance($row["poids_naissance"]);
             $itm->setphoto_enfant($row["photo_enfant"]);
-			$itm->setnom_parent($row["nom"]);
+			$itm->setfirstnam_parent($row["firstname_parent"]);
 
 
 			array_push($stack, $itm);
@@ -28,7 +28,7 @@ class enfantManager {
 	//Add Enfant
 	public function add($Enfant){
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
-		$req = "INSERT INTO `enfant`(`nom_enfant`,`date_naissance`,`poids_naissance`,`photo_enfant`) VALUES (:nom_enfant,:date_naissance,:poids_naissance,:photo_enfant)";
+		$req = "INSERT INTO `enfant`(`nom_enfant`,`date_naissance`,`poids_naissance`,`photo_enfant`) VALUES (:fnom_enfant,:date_naissance,:poids_naissance,:photo_enfant)";
 
 		$addEnfantQuery = $dbh ->prepare($req);
 		$addEnfantQuery -> bindParam(":nom_enfant",$Enfant->getnom_enfant(),PDO::PARAM_STR);

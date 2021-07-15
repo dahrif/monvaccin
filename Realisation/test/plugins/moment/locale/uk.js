@@ -39,7 +39,7 @@
     }
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
-                nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+                firstnameinative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
                     '_'
                 ),
                 accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
@@ -52,19 +52,19 @@
             nounCase;
 
         if (m === true) {
-            return weekdays['nominative']
+            return weekdays['firstnameinative']
                 .slice(1, 7)
-                .concat(weekdays['nominative'].slice(0, 1));
+                .concat(weekdays['firstnameinative'].slice(0, 1));
         }
         if (!m) {
-            return weekdays['nominative'];
+            return weekdays['firstnameinative'];
         }
 
         nounCase = /(\[[ВвУу]\]) ?dddd/.test(format)
             ? 'accusative'
             : /\[?(?:минулої|наступної)? ?\] ?dddd/.test(format)
             ? 'genitive'
-            : 'nominative';
+            : 'firstnameinative';
         return weekdays[nounCase][m.day()];
     }
     function processHoursFunction(str) {

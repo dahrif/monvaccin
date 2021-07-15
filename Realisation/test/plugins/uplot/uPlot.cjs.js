@@ -2145,7 +2145,7 @@ function syncFontSize(axis) {
 function uPlot(opts, data, then) {
 	const self = {};
 
-	// TODO: cache denoms & mins scale.cache = {r, min, }
+	// TODO: cache defirstnames & mins scale.cache = {r, min, }
 	function getValPct(val, scale) {
 		let _val = (
 			scale.distr == 3 ? log10(val > 0 ? val : scale.clamp(self, val, scale.min, scale.max, scale.key)) :

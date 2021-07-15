@@ -131,7 +131,7 @@ $(function () {
 
   // $('#world-map-markers').vectorMap({
   //   map              : 'world_en',
-  //   normalizeFunction: 'polynomial',
+  //   normalizeFunction: 'polyfirstnameial',
   //   hoverOpacity     : 0.7,
   //   hoverColor       : false,
   //   backgroundColor  : 'transparent',

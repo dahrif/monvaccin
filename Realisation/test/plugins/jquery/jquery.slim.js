@@ -101,7 +101,7 @@ var document = window.document;
 		type: true,
 		src: true,
 		nonce: true,
-		noModule: true
+		firstnameodule: true
 	};
 
 	function DOMEval( code, node, doc ) {
@@ -6105,7 +6105,7 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl && !node.noModule ) {
+							if ( jQuery._evalUrl && !node.firstnameodule ) {
 								jQuery._evalUrl( node.src, {
 									nonce: node.nonce || node.getAttribute( "nonce" )
 								}, doc );

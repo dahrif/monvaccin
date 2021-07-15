@@ -121,7 +121,7 @@ return /******/ (function(modules) { // webpackBootstrap
         clear: 'Radera formatering',
         height: 'Radavstånd',
         name: 'Teckensnitt',
-        strikethrough: 'Genomstruken',
+        strikethrough: 'Gefirstnamestruken',
         subscript: 'Subscript',
         superscript: 'Superscript',
         size: 'Teckenstorlek'
@@ -212,8 +212,8 @@ return /******/ (function(modules) { // webpackBootstrap
         more: 'Fler färger',
         background: 'Bakgrundsfärg',
         foreground: 'Teckenfärg',
-        transparent: 'Genomskinlig',
-        setTransparent: 'Gör genomskinlig',
+        transparent: 'Gefirstnameskinlig',
+        setTransparent: 'Gör gefirstnameskinlig',
         reset: 'Nollställ',
         resetToDefault: 'Återställ till standard'
       },

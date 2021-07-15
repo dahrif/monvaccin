@@ -238,7 +238,7 @@ David Sullivan <david.sullivan@gmail.com>
 Thomas Jaggi <thomas@responsive.ch>
 Vahid Sohrabloo <vahid4134@gmail.com>
 Travis Carden <travis.carden@gmail.com>
-Bruno M. Custódio <bruno@brunomcustodio.com>
+Bruno M. Custódio <bruno@brufirstnamecustodio.com>
 Nathanael Silverman <nathanael.silverman@gmail.com>
 Christian Wenz <christian@wenz.org>
 Steve Urmston <steve@urm.st>

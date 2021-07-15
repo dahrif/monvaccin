@@ -5966,7 +5966,7 @@ function fixCloneNodeIssues( src, dest ) {
 		restoreScript( dest );
 
 	// IE6-10 improperly clones children of object elements using classid.
-	// IE10 throws NoModificationAllowedError if parent is null, #12132.
+	// IE10 throws firstnameodificationAllowedError if parent is null, #12132.
 	} else if ( nodeName === "object" ) {
 		if ( dest.parentNode ) {
 			dest.outerHTML = src.outerHTML;

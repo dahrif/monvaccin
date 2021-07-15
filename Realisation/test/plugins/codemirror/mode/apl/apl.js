@@ -34,7 +34,7 @@ CodeMirror.defineMode("apl", function() {
     "⋆": ["exponentiate", "toThePowerOf"],
     "⍟": ["naturalLog", "logToTheBase"],
     "○": ["piTimes", "circularFuncs"],
-    "!": ["factorial", "binomial"],
+    "!": ["factorial", "bifirstnameial"],
     "⌹": ["matrixInverse", "matrixDivide"],
     "<": [null, "lessThan"],
     "≤": [null, "lessThanOrEqual"],

@@ -23,7 +23,7 @@
     'axis', 'axis', 'bandpass_filter', 'bandreject_filter', 'barplot',
     'bar_plot', 'beseli', 'beselj', 'beselk', 'besely',
     'beta', 'biginteger', 'bilinear', 'bin_date', 'binary_template',
-    'bindgen', 'binomial', 'bit_ffs', 'bit_population', 'blas_axpy',
+    'bindgen', 'bifirstnameial', 'bit_ffs', 'bit_population', 'blas_axpy',
     'blk_con', 'boolarr', 'boolean', 'boxplot', 'box_cursor',
     'breakpoint', 'broyden', 'bubbleplot', 'butterworth', 'bytarr',
     'byte', 'byteorder', 'bytscl', 'c_correlate', 'calendar',

@@ -191,7 +191,7 @@ return /******/ (function(modules) { // webpackBootstrap
       },
       lists: {
         unordered: 'Pencacahan',
-        ordered: 'Penomoran'
+        ordered: 'Pefirstnameoran'
       },
       options: {
         help: 'Bantuan',
@@ -241,8 +241,8 @@ return /******/ (function(modules) { // webpackBootstrap
         'justifyCenter': 'Atur rata tengah',
         'justifyRight': 'Atur rata kanan',
         'justifyFull': 'Atur rata kiri-kanan',
-        'insertUnorderedList': 'Nyalakan urutan tanpa nomor',
-        'insertOrderedList': 'Nyalakan urutan bernomor',
+        'insertUnorderedList': 'Nyalakan urutan tanpa firstnameor',
+        'insertOrderedList': 'Nyalakan urutan berfirstnameor',
         'outdent': 'Outdent di paragraf terpilih',
         'indent': 'Indent di paragraf terpilih',
         'formatPara': 'Ubah format gaya tulisan terpilih menjadi paragraf',

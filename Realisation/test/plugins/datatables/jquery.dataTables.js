@@ -14282,7 +14282,7 @@
 			 *
 			 * The type based searching functions can be used to pre-format the
 			 * data to be search on. For example, it can be used to strip HTML
-			 * tags or to de-format telephone numbers for numeric only searching.
+			 * tags or to de-format phone numbers for numeric only searching.
 			 *
 			 * Note that is a search is not defined for a column of a given type,
 			 * no search formatting will be performed.

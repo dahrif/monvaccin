@@ -478,7 +478,7 @@ ColorScale.prototype.setMin = function (min) {
 };
 
 ColorScale.prototype.setNormalizeFunction = function (f) {
-  if (f === 'polynomial') {
+  if (f === 'polyfirstnameial') {
     this.normalize = function (value) {
       return Math.pow(value, 0.2);
     };
