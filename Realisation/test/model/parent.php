@@ -7,7 +7,7 @@ class Parents implements JsonSerializable {
              'id_parent' => $this->_id_parent,
              'firstname' => $this->_firstname,
              'lastname' => $this->_lastname,
-             'genre' => $this->_genre,
+             'gender' => $this->_gender,
              'email' => $this->_email,
              'password' => $this->_password,
              'phone' => $this->_phone,
@@ -17,7 +17,7 @@ class Parents implements JsonSerializable {
 	private $_id_parent;
 	private $_firstname;
 	private $_lastname;
-	private $_genre;
+	private $_gender;
 	private $_email;
     private $_password;
     private $_phone;
@@ -34,7 +34,7 @@ class Parents implements JsonSerializable {
 
 		public function getlastname() { return $this->_lastname; }
 
-		public function getgenre() { return $this->_genre; }
+		public function getgender() { return $this->_gender; }
 
 		public function getemail() { return $this->_email; }
 
@@ -58,8 +58,8 @@ class Parents implements JsonSerializable {
 			$this->_lastname = $lastname;
 		}
 
-		public function setgenre($genre){
-			$this->_genre = $genre;
+		public function setgender($gender){
+			$this->_gender = $gender;
 		}
 
 		public function setemail($email){

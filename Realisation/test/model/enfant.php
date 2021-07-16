@@ -39,6 +39,8 @@ class Enfant implements JsonSerializable {
 
         public function getphoto_enfant() { return $this->_photo_enfant; }
 
+		public function getfirstname_parent() { return $this->_firstname_parent; }
+
 
 
 		public function setid_enfant($id_enfant){
@@ -65,8 +67,8 @@ class Enfant implements JsonSerializable {
 			$this->_photo_enfant = $photo_enfant;
 		}
 
-		public function setfirstname_parent($firstname){
-			$this->_firstname = $firstname;
+		public function setfirstname_parent($firstname_parent){
+			$this->_firstname_parent = $firstname_parent;
 		}
 
 }

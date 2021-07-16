@@ -30,11 +30,12 @@ class Crudvaccination extends React.Component {
 
 
   //add vaccination
-  addvaccination(e) {
+  addvaccination(id_vaccin) {
     $.ajax({
       url: "api/api-vaccination/addvaccination.php",
       method: "POST",
       data: {
+        id_vaccin: id_vaccin,
         nom_vaccin: nom_vaccin.value,
         date_vaccination: date_vaccination.value,
         poids: poids.value,
@@ -103,26 +104,29 @@ class Crudvaccination extends React.Component {
 
     return (
       <div className="container">
-        <div className="col-sm-6">
-          <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
-          </button>
+
+        <div className="card">
+        <div className="card-header">
+          <h3 className="card-title">Mes vaccins</h3>
         </div>
-
-        <table className="table col-12">
-          <thead className="thead-light">
-            <tr>
-
-              <th scope="col">nom vaccin</th>
-              <th scope="col">Date vaccination</th>
-              <th scope="col">Poids</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-       {vaccinationsArray}
-          </tbody>
-        </table>
+        {/* /.card-header */}
+        <div className="card-body p-0">
+          <table className="table table-sm">
+            <thead>
+              <tr>
+                <th></th>
+                <th style={{width: '200px'}}>Nom Vaccin</th>
+                <th>Description</th>
+                <th>Date de vaccination</th>
+                <th>Poids</th>
+              </tr>
+            </thead>
+            <tbody>
+            {vaccinationsArray}
+            </tbody>
+            </table>
+            </div>
+            </div>
 
 
 
@@ -140,14 +144,13 @@ class Crudvaccination extends React.Component {
                 <form className="add-form" onSubmit={this.addvaccination.bind(this)}>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="nom_vaccin">nom vaccin</label>
-                      <input type="text" className="form-control cnom_vaccin" id="nom_vaccin" />
+                      <input type="hidden" className="form-control cnom_vaccin" id="id_vaccin" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
                       <label htmlFor="date_vaccination">date vaccination</label>
-                      <input type="text" name defaultValue className="form-control cdate_vaccination" id="date_vaccination" />
+                      <input type="date" name defaultValue className="form-control cdate_vaccination" id="date_vaccination" />
                     </div>
                   </div>
                   <div className="form-row">

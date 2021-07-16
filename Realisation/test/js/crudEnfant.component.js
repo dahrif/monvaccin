@@ -44,7 +44,8 @@ class CrudEnfant extends React.Component {
       })
       e.preventDefault();
     }
-    // Update Enfant
+    
+     // Remove Enfant
     removeEnfant(id_enfant) {
       $.ajax({
         url: "/api/api-enfant/deleteenfant.php",
@@ -58,7 +59,7 @@ class CrudEnfant extends React.Component {
       })
   
     }
-    // Remove Enfant
+   // Update Enfant
     updateEnfant(ID) {
       $.ajax({
         url: "api/update.php",
