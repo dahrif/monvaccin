@@ -112,7 +112,7 @@ class CrudEnfant extends React.Component {
             <div className="modal-dialog modal-dialog-centered" role="document">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalCenterTitle">Ajouter  Salle</h5>
+                  <h5 className="modal-title" id="exampleModalCenterTitle">Ajouter un enfant</h5>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
@@ -122,19 +122,19 @@ class CrudEnfant extends React.Component {
                     <div className="form-row">
                       <div className="col-12">
                         <label htmlFor="nom_enfant">Nom enfant</label>
-                        <input type="text" className="form-control cnom_enfant" id="nom_enfant" />
+                        <input type="text" className="form-control cnom_enfant" id="nom_enfant" placeholder="Entez le nom de votre enfant" />
                       </div>
                     </div>
                     <div className="form-row">
                       <div className="col-12">
                         <label htmlFor="date_naissance">date naissance</label>
-                        <input type="text" name defaultValue className="form-control cdate_naissance" id="date_naissance" />
+                        <input type="date" name defaultValue className="form-control cdate_naissance" id="date_naissance" />
                       </div>
                     </div>
                     <div className="form-row">
                       <div className="col-12">
-                        <label htmlFor="poids">poids</label>
-                        <input type="text" name defaultValue className="form-control cpoids" id="poids" />
+                        <label htmlFor="poids">poids à la naissance</label>
+                        <input type="text" name defaultValue className="form-control cpoids" id="poids_naissance" placeholder="Entrez le poids "/>
                       </div>
                     </div>
                     <div className="modal-footer">

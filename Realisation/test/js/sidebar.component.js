@@ -23,11 +23,20 @@ class SideBar extends React.Component {
             {/* Sidebar Menu */}
             <nav className="mt-2">
               <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+              <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Accueil
+              </p>
+            </a>
+          </li>
                 {/* Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library */}
-                <li className="nav-item menu-open">
-        <a href="#" className="nav-link active">
-        <img src="childs.png" witdh="20px" height="20px" />
+              <li className="nav-item menu-open">
+          <a href="#" className="nav-link">
+          <img src="childss.png" witdh="20px" height="20px" />
           <p>
             Mes enfants
             <i className="right fas fa-angle-left" />
@@ -35,14 +44,12 @@ class SideBar extends React.Component {
         </a>
         <ul className="nav nav-treeview">
           <li className="nav-item">
-            
-            <a href="./index.html" className="nav-link active">
+            <a href="#" className="nav-link active">
               
-            
               <p><crudEnfant /></p>
+
             </a>
           </li>
-
         </ul>
       </li>
 

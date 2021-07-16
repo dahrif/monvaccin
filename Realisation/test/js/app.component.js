@@ -12,6 +12,7 @@ class App extends React.Component {
           <Menu />
           <SideBar />
 
+
           
 
 {/* Content Wrapper. Contains page content */}
@@ -43,7 +44,6 @@ class App extends React.Component {
               </div>
               <div className="card-body">
                 <Crudvaccination />
-                <CrudEnfant />
               </div>
               {/* /.card-body */}
               <div className="card-footer">

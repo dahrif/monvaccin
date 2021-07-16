@@ -30,12 +30,11 @@ class Crudvaccination extends React.Component {
 
 
   //add vaccination
-  addvaccination(id_vaccin) {
+  addvaccination(e) {
     $.ajax({
       url: "api/api-vaccination/addvaccination.php",
       method: "POST",
       data: {
-        id_vaccin: id_vaccin,
         nom_vaccin: nom_vaccin.value,
         date_vaccination: date_vaccination.value,
         poids: poids.value,
@@ -64,12 +63,12 @@ class Crudvaccination extends React.Component {
 
   }
   // Remove vaccination
-  updatevaccination(ID) {
+  updatevaccination(id_vaccination) {
     $.ajax({
       url: "api/update.php",
       method: "POST",
       data: {
-        id: ID,
+        id_vaccination: id_vaccination,
         nom_vaccin: cnom_vaccin.value,
         date_vaccination: cdate_vaccination.value,
         poids: cpoids.value,
@@ -115,7 +114,7 @@ class Crudvaccination extends React.Component {
             <thead>
               <tr>
                 <th></th>
-                <th style={{width: '200px'}}>Nom Vaccin</th>
+                <th style={{width: '250px'}}>Nom Vaccin</th>
                 <th>Description</th>
                 <th>Date de vaccination</th>
                 <th>Poids</th>
