@@ -49,12 +49,12 @@ class Crudvaccination extends React.Component {
     e.preventDefault();
   }
   // Update vaccination
-  removevaccination(id_vaccination) {
+  removevaccination(date_vaccination) {
     $.ajax({
       url: "/api/api-vaccination/deletevaccination.php",
       method: "POST",
       data: {
-        id_vaccination: id_vaccination
+        date_vaccination: date_vaccination
       },
       success: function (data) {
         //   $(this).parent().remove();
@@ -175,7 +175,7 @@ class Crudvaccination extends React.Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content edit-form">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalCenterTitle">Modifier les informations</h5>
+                <h5 className="modal-title" id="exampleModalCenterTitle">Mon vaccin</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
@@ -197,7 +197,7 @@ class Crudvaccination extends React.Component {
 
                   <input type="hidden" className="sid" />
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-primary save-student">Enregistrer les modification</button>
+                    <button type="submit" className="btn btn-primary save-student">Valider</button>
 
                   </div>
                 </form>

@@ -38,10 +38,10 @@ class VaccinationManager {
 
 	//Delete vaccination
 
-	public function delete($id_vaccination){
+	public function delete($date_vaccination){
     	
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin", "root", "root2021");
-		$req = "DELETE FROM vaccination WHERE id_vaccination = $id_vaccination";
+		$req = "DELETE FROM vaccination WHERE date_vaccination = $date_vaccination";
         $deletevaccination= $dbh->prepare($req);
         $deletevaccination->execute();
     }
@@ -50,7 +50,7 @@ class VaccinationManager {
 	public function update($vaccination){
 		$id_vaccination = $vaccination->getid_vaccination();
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
-		$req = "UPDATE vaccination SET id_vaccin = :id_vaccin,id_enfant = :id_enfant,date_vaccination = :date_vaccination,poids = :poids WHERE id_vaccination = $id_vaccination";
+		$req = "UPDATE vaccination SET date_vaccination = :date_vaccination,poids = :poids WHERE id_vaccination = $id_vaccination";
 		$updatevaccinationQuery = $dbh ->prepare($req);
 		$updatevaccinationQuery -> bindParam(":date_vaccination",$vaccination->getdate_vaccination(),PDO::PARAM_STR);
 		$updatevaccinationQuery -> bindParam(":poids",$vaccination->getpoids(),PDO::PARAM_STR);
