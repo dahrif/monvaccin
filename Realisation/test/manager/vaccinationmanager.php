@@ -51,6 +51,7 @@ class VaccinationManager {
 		$id_vaccination = $vaccination->getid_vaccination();
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
 		$req = "UPDATE vaccination SET id_vaccin = :id_vaccin,id_enfant = :id_enfant,date_vaccination = :date_vaccination,poids = :poids WHERE id_vaccination = $id_vaccination";
+		$updatevaccinationQuery = $dbh ->prepare($req);
 		$updatevaccinationQuery -> bindParam(":date_vaccination",$vaccination->getdate_vaccination(),PDO::PARAM_STR);
 		$updatevaccinationQuery -> bindParam(":poids",$vaccination->getpoids(),PDO::PARAM_STR);
 		$updatevaccinationQuery->execute();

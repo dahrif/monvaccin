@@ -20,11 +20,11 @@ class Crudvaccination extends React.Component {
 
     // affichage de données par Ajax
 
-    $.getJSON("../api/api-vaccination/getvaccination.php",
+    $.getJSON("/api/api-vaccination/getvaccination.php",
       function (data) {
         this.setState({ vaccinationsArray: data });
       }.bind(this))
-      
+
       .fail(function (jqXHR, textStatus, errorThrown) {
         console.log(errorThrown);
       });
@@ -34,7 +34,7 @@ class Crudvaccination extends React.Component {
   //add vaccination
   addvaccination(e) {
     $.ajax({
-      url: "api/api-vaccination/addvaccination.php",
+      url: "/api/api-vaccination/addvaccination.php",
       method: "POST",
       data: {
         date_vaccination: date_vaccination.value,
@@ -65,15 +65,15 @@ class Crudvaccination extends React.Component {
   }
 
   showUpdateModel(vaccination) {
-    this.setState({vaccination: vaccination})
-}
- 
+    this.setState({ vaccination: vaccination })
+  }
+
   updatevaccination() {
     $.ajax({
-      url: "api/api-vaccination/updatevaccination.php",
+      url: "/api/api-vaccination/updatevaccination.php",
       method: "POST",
       data: {
-        id_vaccination: id_vaccination,
+        id_vaccination: this.state.vaccination.id_vaccination,
         date_vaccination: cdate_vaccination.value,
         poids: cpoids.value,
       },
@@ -109,28 +109,28 @@ class Crudvaccination extends React.Component {
       <div className="container">
 
         <div className="card">
-        <div className="card-header">
-          <h3 className="card-title">Mes vaccins</h3>
-        </div>
-        {/* /.card-header */}
-  <div className="card-body table-responsive p-0">
-          <table className="table table-sm">
-            <thead>
-              <tr>
-                <th></th>
-                <th style={{width: '250px'}}>Nom Vaccin</th>
-                <th>Description</th>
-                <th>Date de vaccination</th>
-                <th>Poids</th>
-              </tr>
-            </thead>
-            <tbody>
-            {vaccinationsArray}
-            </tbody>
+          <div className="card-header">
+            <h3 className="card-title">Mes vaccins</h3>
+          </div>
+          {/* /.card-header */}
+          <div className="card-body table-responsive p-0">
+            <table className="table table-sm">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th style={{ width: '250px' }}>Nom Vaccin</th>
+                  <th>Description</th>
+                  <th>Date de vaccination</th>
+                  <th>Poids</th>
+                </tr>
+              </thead>
+              <tbody>
+                {vaccinationsArray}
+              </tbody>
             </table>
-         
-            </div>
-</div>
+
+          </div>
+        </div>
 
 
 
@@ -161,7 +161,7 @@ class Crudvaccination extends React.Component {
                   <div className="modal-footer">
                     <button type="submit" id="ajouter" className="btn btn-primary enrg-salle">Ajouter</button>
                   </div>
-                  
+
                 </form>
               </div>
 
@@ -184,21 +184,21 @@ class Crudvaccination extends React.Component {
                 <form className="" onSubmit={this.updatevaccination.bind(this)}>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="input2">date_vaccination</label>
-                      <input type="text" value={this.state.vaccination.date_vaccination} onChange={(e) => this.setState({ vaccination: { ...this.state.vaccination, date_vaccination: e.target.value } })} className="form-control date_vaccination" id="cdate_vaccination" />
+                      <label htmlFor="input2">Date vaccination</label>
+                      <input type="date" value={this.state.vaccination.date_vaccination} onChange={(e) => this.setState({ vaccination: { ...this.state.vaccination, date_vaccination: e.target.value } })} className="form-control date_vaccination" id="cdate_vaccination" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
                       <label htmlFor="input2">Poids</label>
-                      <input type="text" value={this.state.vaccination.poids} onChange={(e) => this.setState({ vaccination: { ...this.state.vaccination, poids: e.target.value } })}  className="form-control cpoids" id="cpoids" />
+                      <input type="text" value={this.state.vaccination.poids} onChange={(e) => this.setState({ vaccination: { ...this.state.vaccination, poids: e.target.value } })} className="form-control cpoids" id="cpoids" />
                     </div>
                   </div>
 
                   <input type="hidden" className="sid" />
                   <div className="modal-footer">
                     <button type="submit" className="btn btn-primary save-student">Enregistrer les modification</button>
-                    
+
                   </div>
                 </form>
               </div>
@@ -218,7 +218,7 @@ class Crudvaccination extends React.Component {
 
 
 
-    
+
 
       </div>
     )

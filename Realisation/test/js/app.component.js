@@ -12,7 +12,7 @@ class App extends React.Component {
           <Menu />
           <SideBar />
           <Enfant1/>
-          <CrudEnfant />
+          {/* <CrudEnfant /> */}
           
 
 

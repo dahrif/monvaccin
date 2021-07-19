@@ -45,7 +45,7 @@ class SideBar extends React.Component {
                   </p>
                 </a>
                 <ul className="nav nav-treeview">
-                  <crudEnfant />
+                  {/* <crudEnfant /> */}
                
                 </ul>
               </li>

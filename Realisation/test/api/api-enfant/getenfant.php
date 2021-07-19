@@ -6,3 +6,4 @@ require_once(__DIR__.'/../../manager/enfantmanager.php') ;
         $enfant = $enfantManager->getList();
         print_r(json_encode($enfant));
 ?>
+
