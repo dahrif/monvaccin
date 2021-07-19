@@ -108,7 +108,7 @@ class Crudvaccination extends React.Component {
           <h3 className="card-title">Mes vaccins</h3>
         </div>
         {/* /.card-header */}
-        <div className="card-body p-0">
+  
           <table className="table table-sm">
             <thead>
               <tr>
@@ -123,7 +123,7 @@ class Crudvaccination extends React.Component {
             {vaccinationsArray}
             </tbody>
             </table>
-            </div>
+         
             </div>
 
 

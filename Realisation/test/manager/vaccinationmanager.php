@@ -5,7 +5,7 @@ class VaccinationManager {
 
 	//Get vaccination
 	public function getList(){
-		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
+		$dbh = new PDO("mysql:host=localhost:3306;dbname=monvaccin","root","root2021");
 		$stack = array();
 		$req = 'SELECT * FROM vaccination RIGHT OUTER JOIN vaccin ON vaccination.id_vaccin=vaccin.id_vaccin ORDER BY vaccination.id_vaccination';
 		$result = $dbh->query($req)->fetchAll();
