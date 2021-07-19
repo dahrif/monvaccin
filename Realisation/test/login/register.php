@@ -17,11 +17,67 @@
 
 <html>
 <head>
-	<title>Welcome to RAPPEL DES DATTES!</title>
+	<title>Mon Vaccin</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../dist/css/adminlte.css">
 </head>
 <body>
 
-	<div id="inputContainer">
+<body class="login-page" style="min-height: 463.561px;">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="../../index2.html" class="h1"><b>MonVaccin</b></a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">CONNEXION</p>
+
+
+      <form id="loginForm" action="register.php" method="POST">
+        <div class="input-group d-flex justify-content-center col-12 mb-3">
+		<?php echo $account->getError(Constants::$loginFailed); ?>
+		<input id="loginname" name="loginname" type="text" placeholder="Tapez votre Nom ..." required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group d-flex justify-content-center col-12 mb-3">
+		<input id="loginPassword" name="loginPassword" type="password" placeholder="Tapez votre mot de passe" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-12">
+            <button type="submit" name="loginButton" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+
+
+</body>
+
+	<!-- <div id="inputContainer">
 		<form id="loginForm" action="register.php" method="POST">
 			<h2>Login to your account</h2>
 			<p>
@@ -36,7 +92,7 @@
 
 			<button type="submit" name="loginButton">LOG IN</button>
 			
-		</form>
+		</form> -->
 
 
 

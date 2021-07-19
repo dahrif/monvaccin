@@ -11,6 +11,7 @@ class App extends React.Component {
       <div className="wrapper">
           <Menu />
           <SideBar />
+          <crudEnfant />
 
 
           

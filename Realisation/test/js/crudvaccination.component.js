@@ -35,7 +35,6 @@ class Crudvaccination extends React.Component {
       url: "api/api-vaccination/addvaccination.php",
       method: "POST",
       data: {
-        nom_vaccin: nom_vaccin.value,
         date_vaccination: date_vaccination.value,
         poids: poids.value,
       },
