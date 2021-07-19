@@ -1,7 +1,7 @@
 <?php
 require_once (__DIR__.'/../../manager/vaccinationmanager.php');
 
-$vaccination = new vaccination();
+$vaccination = new Vaccination();
 $vaccination->setdate_vaccination($_POST["date_vaccination"]);
 $vaccination->setpoids($_POST["poids"]);
 $addvaccinationManager = null;

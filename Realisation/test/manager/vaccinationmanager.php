@@ -7,7 +7,7 @@ class VaccinationManager {
 	public function getList(){
 		$dbh = new PDO("mysql:host=localhost:3306;dbname=monvaccin","root","root2021");
 		$stack = array();
-		$req = 'SELECT * FROM vaccination RIGHT OUTER JOIN vaccin ON vaccination.id_vaccin=vaccin.id_vaccin ORDER BY vaccination.id_vaccination';
+		$req = 'SELECT * FROM vaccination LEFT OUTER JOIN vaccin ON vaccination.id_vaccin=vaccin.id_vaccin ORDER BY vaccination.id_vaccination';
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
 			$itm = new Vaccination($row);
@@ -51,9 +51,6 @@ class VaccinationManager {
 		$id_vaccination = $vaccination->getid_vaccination();
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
 		$req = "UPDATE vaccination SET id_vaccin = :id_vaccin,id_enfant = :id_enfant,date_vaccination = :date_vaccination,poids = :poids WHERE id_vaccination = $id_vaccination";
-		$updatevaccinationQuery = $dbh ->prepare($req);
-		$updatevaccinationQuery -> bindParam(":id_vaccin",$vaccination->getid_vaccin(),PDO::PARAM_STR);
-		$updatevaccinationQuery -> bindParam(":id_enfant",$vaccination->getid_enfant(),PDO::PARAM_STR);
 		$updatevaccinationQuery -> bindParam(":date_vaccination",$vaccination->getdate_vaccination(),PDO::PARAM_STR);
 		$updatevaccinationQuery -> bindParam(":poids",$vaccination->getpoids(),PDO::PARAM_STR);
 		$updatevaccinationQuery->execute();

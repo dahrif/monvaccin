@@ -6,9 +6,8 @@ class Enfant extends React.Component {
     render() {
 
         return (
-            <tr>
-                <li>{this.props.Enfant.nom_enfant}</li>
-            </tr>
+
+            <li className="nav-item">{this.props.Enfant.nom_enfant}</li>
 
         )
     }

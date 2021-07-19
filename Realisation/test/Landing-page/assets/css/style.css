@@ -95,6 +95,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0 0 0;
   font-size: 27px;
   font-weight: 400;
+  width: 400px;
+  box-sizing: border-box;
 }
 
 #hero .btn-get-started {
@@ -124,6 +126,11 @@ h1, h2, h3, h4, h5, h6 {
   #hero .hero-img img {
     width: 50%;
   }
+  #hero h2 {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -134,10 +141,12 @@ h1, h2, h3, h4, h5, h6 {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
-  }
+    width: 250px;
+}
   #hero .hero-img img {
+    margin-top: 10px;
     width: 80%;
-  }
+}
 }
 
 /*--------------------------------------------------------------
