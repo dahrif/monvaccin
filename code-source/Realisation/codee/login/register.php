@@ -18,9 +18,11 @@
 <html>
 <head>
 	<title>Mon Vaccin</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../dist/css/adminlte.css">
+	<link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+	<script src="https://kit.fontawesome.com/98beef4dae.js" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 
@@ -49,7 +51,7 @@
 		<input id="loginPassword" name="loginPassword" type="password" placeholder="Tapez votre mot de passe" required>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span><i class="fas fa-lock"></i></span>
             </div>
           </div>
         </div>

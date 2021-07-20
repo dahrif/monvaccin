@@ -112,9 +112,10 @@ class Crudvaccination extends React.Component {
 
         <div className="container">
         <div id="accordion" className="accordion-container">
-          
+        <h4 className="accordion-title rounded shadow">soujoud<span> <i className="fas fa-edit"></i></span> <span> <i className="far fa-trash-alt"></i></span></h4>
           
           <div className="accordion-content">
+            
           <Enfant1/>
           <div className="card">
           <div className="card-header">
