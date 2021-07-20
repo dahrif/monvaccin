@@ -99,10 +99,10 @@ class CrudEnfant extends React.Component {
 
     return (
       <div className="container">
-        <div className="col-sm-6">
+        <div className="">
 
           {EnfantsArray}
-          
+
         </div>
 
 

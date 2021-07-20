@@ -113,7 +113,7 @@ class Crudvaccination extends React.Component {
         <div className="container">
         <div id="accordion" className="accordion-container">
           
-          <h4 className="accordion-title rounded shadow">Soujoud<span> <i className="fas fa-edit"></i></span> <span> <i className="far fa-trash-alt"></i></span></h4>
+          
           <div className="accordion-content">
           <Enfant1/>
           <div className="card">
@@ -142,9 +142,7 @@ class Crudvaccination extends React.Component {
 
           </div>
         </div>
-        <div className="text-center">
-              <button data-toggle="modal" data-target="#exampleModalCenter2" name="" id="" className="btn btn-primary text-white rounded-pill text-center m-5" href="#" role="button">Ajouter un enfant</button>
-              </div>
+   
       </div>
 
 
