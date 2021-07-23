@@ -38,6 +38,8 @@ class Crudenfant extends React.Component {
       method: "POST",
       data: {
         nom_enfant: nom_enfant.value,
+        date_naissance: date_naissance.value,
+        poids_naissance: poids_naissance.value,
       },
       success: function (data) {
         this.chargementDonnees()
@@ -114,8 +116,8 @@ class Crudenfant extends React.Component {
             <div className="accordion-title rounded shadow"> {enfantsArray} </div>
 
 
-
-
+            <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
+            </button>
             <div className="accordion-content">
               <div className="card col-md-12 mx-auto">
                 {enfantsArray}
@@ -186,14 +188,21 @@ class Crudenfant extends React.Component {
 
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="date_enfant">date enfant</label>
-                      <input type="date" className="form-control cdate_enfant" id="date_enfant" />
+                      <label htmlFor="date_naissance">nom enfant</label>
+                      <input type="text" className="form-control cdate_naissance" id="nom_enfant" />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="col-12">
+                      <label htmlFor="date_naissance">date enfant</label>
+                      <input type="date" className="form-control cdate_naissance" id="date_naissance" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="poids">poids</label>
-                      <input type="text" className="form-control cpoids" id="poids" />
+                      <label htmlFor="poids">poids naissance</label>
+                      <input type="text" className="form-control cpoids" id="poids_naissance" />
                     </div>
                   </div>
                   <div className="modal-footer">
