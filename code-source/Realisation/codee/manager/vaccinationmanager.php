@@ -7,7 +7,7 @@ class VaccinationManager {
 	public function getList(){
 		$dbh = new PDO("mysql:host=localhost:3306;dbname=monvaccin","root","root2021");
 		$stack = array();
-		$req = 'SELECT * FROM vaccination LEFT OUTER JOIN vaccin ON vaccination.id_vaccin=vaccin.id_vaccin ORDER BY vaccination.id_vaccination';
+		$req = 'SELECT * FROM vaccination LEFT OUTER JOIN vaccin ON vaccination.id_vaccin=vaccin.id_vaccin LEFT OUTER JOIN enfant on vaccination.id_enfant=enfant.id_enfant ORDER BY vaccination.id_vaccination';
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
 			$itm = new Vaccination($row);
@@ -18,6 +18,10 @@ class VaccinationManager {
 			$itm->setdescription($row["description"]);
 			$itm->setdate_vaccination($row["date_vaccination"]);
 			$itm->setpoids($row["poids"]);
+			$itm->setnom_enfant($row["nom_enfant"]);
+			$itm->setdate_naissance($row["date_naissance"]);
+			$itm->setpoids_naissance($row["poids_naissance"]);
+
 			array_push($stack, $itm);
 		}
 		return $stack;
@@ -41,7 +45,7 @@ class VaccinationManager {
 	public function delete($id_vaccination){
     	
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin", "root", "root2021");
-		$req = "DELETE FROM vaccination WHERE date_vaccination = :date_vaccination";
+		$req = "DELETE FROM vaccination WHERE id_vaccination = :id_vaccination";
         $deletevaccination= $dbh->prepare($req);
         $deletevaccination->execute();
     }

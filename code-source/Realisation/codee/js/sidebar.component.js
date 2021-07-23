@@ -27,22 +27,17 @@ class SideBar extends React.Component {
    
 
               <li className="nav-item">
-                <a href="../acceuil.html" className="nav-link">
-                  <i className="nav-icon fas fa-th"></i>
-                  <p>
-                    Accueil
-                  </p>
+                <a href="acceuil.html" className="nav-link">
+                  <i className="fas fa-home"/>
+                  <p> Accueil</p>
                 </a>
               </li>
               {/* Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library */}
-              <li className="nav-item menu-open">
-                <a href="../mes-enfants.html" className="nav-link">
-                  <img src="/dist/img/childss.png" witdh="20px" height="20px" />
-                  <p>
-                    Mes enfants
-                    <i className="right fas fa-angle-left" />
-                  </p>
+              <li className="nav-item">
+                <a href="mes-enfants.html" className="nav-link">
+                  <i className="fas fa-baby"/>
+                  <p> Mes enfants</p>
                 </a>
                 <ul className="nav nav-treeview">
                   {/* <crudEnfant /> */}

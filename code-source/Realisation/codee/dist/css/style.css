@@ -2,7 +2,7 @@
   position: relative;
   margin: 0;
   padding: 0.625em 0.625em 0.625em 2em;
-  background-color: #000;
+  background-color: #3453d1;
   font-size: 1.25em;
   font-weight: normal;
   color: #fff;
@@ -14,7 +14,7 @@
 .accordion-container .accordion-title:hover,
 .accordion-container .accordion-title:active,
 .accordion-title.open {
-  background-color: #dc3545;
+  background-color: #E75755;  
 }
 
 .accordion-container .accordion-title::before {

@@ -25,6 +25,7 @@ class App extends React.Component {
             <section className="content">
               <div className="card-body">
                 
+                <Crudenfant />
                 <Crudvaccination />
               </div>
             </section>

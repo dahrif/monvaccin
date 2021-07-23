@@ -48,13 +48,14 @@ class Crudvaccination extends React.Component {
     })
     e.preventDefault();
   }
+  
   // Update vaccination
-  removevaccination(date_vaccination) {
+  removevaccination(id_vaccination) {
     $.ajax({
       url: "/api/api-vaccination/deletevaccination.php",
       method: "POST",
       data: {
-        date_vaccination: date_vaccination,
+        id_vaccination: id_vaccination,
       },
       success: function (data) {
         //   $(this).parent().remove();
