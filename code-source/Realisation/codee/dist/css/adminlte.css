@@ -51858,7 +51858,9 @@ a.text-muted:hover {
 }
 /*# sourceMappingURL=adminlte.css.map */
 
-
+.init {
+  background: #fff;
+}
 
 .fait{
   background: #3453d125;
@@ -51867,3 +51869,4 @@ a.text-muted:hover {
 .pas-fait{
   background: #E7575525;
 }
+

@@ -26,7 +26,7 @@ class App extends React.Component {
               <div className="card-body">
                 
                 <Crudenfant />
-                <Crudvaccination />
+                
               </div>
             </section>
             {/* /.content */}

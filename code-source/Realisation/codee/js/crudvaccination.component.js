@@ -49,13 +49,15 @@ class Crudvaccination extends React.Component {
     e.preventDefault();
   }
   
-  // Update vaccination
+  // delete vaccination
   removevaccination(id_vaccination) {
     $.ajax({
       url: "/api/api-vaccination/deletevaccination.php",
       method: "POST",
       data: {
         id_vaccination: id_vaccination,
+        date_vaccination: "",
+        poids: "",
       },
       success: function (data) {
         //   $(this).parent().remove();
@@ -127,11 +129,12 @@ class Crudvaccination extends React.Component {
             <table className="table table-sm">
               <thead>
                 <tr>
-                  <th></th>
-                  <th style={{ width: '250px' }}>Nom Vaccin</th>
-                  <th>Description</th>
-                  <th>Date de vaccination</th>
-                  <th>Poids</th>
+                  <th className="align-middle text-center"></th>
+                  <th className="align-middle text-center">Nom Vaccin</th>
+                  <th className="align-middle text-center">Description</th>
+                  <th className="align-middle text-center">Date de vaccination</th>
+                  <th className="align-middle text-center">Poids</th>
+                  <th className="align-middle text-center"></th>
                 </tr>
               </thead>
               <tbody>

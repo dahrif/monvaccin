@@ -95,11 +95,12 @@ class Crudenfant extends React.Component {
     let enfantsArray = this.state.enfantsArray.map((enfant) => {
       return (
         <Enfant
+
           key={enfant.id_enfant}
           enfant={enfant}
 
-
         />
+
       )
     })
 
@@ -109,15 +110,15 @@ class Crudenfant extends React.Component {
 
 
         <div className="container">
-        <div id="accordion" className="accordion-container">
+          <div id="accordion" className="accordion-container">
             <div className="accordion-title rounded shadow"> {enfantsArray} </div>
-    
-           
-        
-          
-          <div className="accordion-content">
-              <div className="card col-md-12 mx-auto">
 
+
+
+
+            <div className="accordion-content">
+              <div className="card col-md-12 mx-auto">
+                {enfantsArray}
 
                 <div className="row">
                   <div className="col-md-4 my-3 mx-auto">
@@ -137,36 +138,36 @@ class Crudenfant extends React.Component {
 
 
               </div>
-            
-      
-          <div className="card">
-          <div className="card-header">
-            <h3 className="card-title">Mes vaccins</h3>
-          </div>
-          {/* /.card-header */}
-          <div className="card-body table-responsive p-0">
-            <table className="table table-sm">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th style={{ width: '250px' }}>Nom Vaccin</th>
-                  <th>Description</th>
-                  <th>Date de enfant</th>
-                  <th>Poids</th>
-                </tr>
-              </thead>
-              <tbody>
-     
-              </tbody>
-            </table>
 
-          </div>
-        </div>
 
+              <div className="card">
+                <div className="card-header">
+                  <h3 className="card-title">Mes vaccins</h3>
+                </div>
+                {/* /.card-header */}
+                <div className="card-body table-responsive p-0">
+                  <table className="table table-sm">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th style={{ width: '250px' }}>Nom Vaccin</th>
+                        <th>Description</th>
+                        <th>Date de enfant</th>
+                        <th>Poids</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
-   
-      </div>
 
 
 
@@ -280,41 +281,41 @@ jQuery(function ($) {
 });
 
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-36251023-1']);
+_gaq.push(['_setDomainName', 'jqueryscript.net']);
+_gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+(function () {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 
-  try {
-    fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-      return true;
-    }).catch(function(e) {
-      var carbonScript = document.createElement("script");
-      carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-      carbonScript.id = "_carbonads_js";
-      document.getElementById("carbon-block").appendChild(carbonScript);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      /* Toggle between adding and removing the "active" class,
-      to highlight the button that controls the panel */
-      this.classList.toggle("active");
-  
-      /* Toggle between hiding and showing the active panel */
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+    return true;
+  }).catch(function (e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
