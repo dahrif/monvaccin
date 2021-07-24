@@ -40,25 +40,26 @@ class Crudenfant extends React.Component {
         nom_enfant: nom_enfant.value,
         date_naissance: date_naissance.value,
         poids_naissance: poids_naissance.value,
+        genre: genre.value,
       },
       success: function (data) {
         this.chargementDonnees()
-        $("#exampleModalCenter").modal('hide');
+        $("#exampleModalCenter2").modal('hide');
         console.log(data);
       }.bind(this)
     })
     e.preventDefault();
   }
   // Update enfant
-  removeenfant(date_enfant) {
+  removeenfant(id_enfant) {
     $.ajax({
       url: "/api/api-enfant/deleteenfant.php",
       method: "POST",
       data: {
-        date_enfant: date_enfant,
+        id_enfant: id_enfant
       },
       success: function (data) {
-        //   $(this).parent().remove();
+        $(this).parent().remove();
         this.chargementDonnees()
       }.bind(this)
     })
@@ -75,8 +76,10 @@ class Crudenfant extends React.Component {
       method: "POST",
       data: {
         id_enfant: this.state.enfant.id_enfant,
-        date_enfant: cdate_enfant.value,
-        poids: cpoids.value,
+        nom_enfant: nom_enfant.value,
+        date_naissance: date_naissance.value,
+        poids_naissance: poids_naissance.value,
+        genre: genre.value,
       },
       success: function (data) {
         this.chargementDonnees()
@@ -100,7 +103,8 @@ class Crudenfant extends React.Component {
 
           key={enfant.id_enfant}
           enfant={enfant}
-
+          onClickdel={this.removeenfant.bind(this, enfant.id_enfant)}
+          onClickUpdate={this.showUpdateModel.bind(this, enfant)}
         />
 
       )
@@ -109,15 +113,15 @@ class Crudenfant extends React.Component {
     return (
       <div className="container">
 
-
+        <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter2" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
+        </button>
 
         <div className="container">
           <div id="accordion" className="accordion-container">
              {enfantsArray}
 
 
-            <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
-            </button>
+         
             <div className="accordion-content">
               <div className="card col-md-12 mx-auto">
                 {enfantsArray}
@@ -174,11 +178,11 @@ class Crudenfant extends React.Component {
 
 
 
-        <div className="modal fade" id="exampleModalCenter" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div className="modal fade" id="exampleModalCenter2" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalCenterTitle">Ajouter  Salle</h5>
+                <h5 className="modal-title" id="exampleModalCenterTitle">Ajouter un enfant</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
@@ -188,22 +192,29 @@ class Crudenfant extends React.Component {
 
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="date_naissance">nom enfant</label>
+                      <label htmlFor="date_naissance">Nom</label>
                       <input type="text" className="form-control cdate_naissance" id="nom_enfant" />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="date_naissance">date enfant</label>
+                      <label htmlFor="date_naissance">Date de naissance</label>
                       <input type="date" className="form-control cdate_naissance" id="date_naissance" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
-                      <label htmlFor="poids">poids naissance</label>
+                      <label htmlFor="poids">Poids à la naissance</label>
                       <input type="text" className="form-control cpoids" id="poids_naissance" />
                     </div>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="genre">Genre</label>
+                    <select className="form-control" id="genre">
+                      <option>Fille</option>
+                      <option>Garçon</option>
+                    </select>
                   </div>
                   <div className="modal-footer">
                     <button type="submit" id="ajouter" className="btn btn-primary enrg-salle">Ajouter</button>
@@ -232,7 +243,7 @@ class Crudenfant extends React.Component {
                   <div className="form-row">
                     <div className="col-12">
                       <label htmlFor="input2">Date enfant</label>
-                      <input type="date" value={this.state.enfant.date_enfant} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, date_enfant: e.target.value } })} className="form-control date_enfant" id="cdate_enfant" />
+                      <input type="date" value={this.state.enfant.date_enfant} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, date_enfant: e.target.value } })} className="form-control date_enfant" id="cdate_naissance" />
                     </div>
                   </div>
                   <div className="form-row">

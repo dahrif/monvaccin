@@ -39,6 +39,7 @@ class SideBar extends React.Component {
                   <i className="fas fa-baby"/>
                   <p> Mes enfants</p>
                 </a>
+
               </li>
 
 

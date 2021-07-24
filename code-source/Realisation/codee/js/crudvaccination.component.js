@@ -56,8 +56,8 @@ class Crudvaccination extends React.Component {
       method: "POST",
       data: {
         id_vaccination: id_vaccination,
-        date_vaccination: "",
-        poids: "",
+        date_vaccination: null,
+        poids: null,
       },
       success: function (data) {
         //   $(this).parent().remove();

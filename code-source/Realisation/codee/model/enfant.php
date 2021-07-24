@@ -9,8 +9,8 @@ class Enfant implements JsonSerializable {
              'nom_enfant' => $this->_nom_enfant,
              'date_naissance' => $this->_date_naissance,
              'poids_naissance' => $this->_poids_naissance,
-             'photo_enfant' => $this->_photo_enfant,
-			 'firstname' => $this->_firstname,
+             'genre' => $this->_genre,
+			 'date_vaccination' => $this->_date_vaccination,
 
 
         );
@@ -20,8 +20,8 @@ class Enfant implements JsonSerializable {
 	private $_nom_enfant;
 	private $_date_naissance;
 	private $_poids_naissance;
-    private $_photo_enfant;
-	private $_firstname;
+    private $_genre;
+	private $_date_vaccination;
 
 
 	public function __construct() {
@@ -37,9 +37,9 @@ class Enfant implements JsonSerializable {
 
 		public function getpoids_naissance() { return $this->_poids_naissance; }
 
-        public function getphoto_enfant() { return $this->_photo_enfant; }
+        public function getgenre() { return $this->_genre; }
 
-		public function getfirstnamet() { return $this->_firstname; }
+		public function getdate_vaccination() { return $this->_date_vaccination; }
 
 
 
@@ -63,12 +63,12 @@ class Enfant implements JsonSerializable {
 			$this->_poids_naissance = $poids_naissance;
 		}
 
-        public function setphoto_enfant($photo_enfant){
-			$this->_photo_enfant = $photo_enfant;
+        public function setgenre($genre){
+			$this->_genre = $genre;
 		}
 
-		public function setfirstname($firstname){
-			$this->_firstname = $firstname;
+		public function setdate_vaccination($date_vaccination){
+			$this->_date_vaccination = $date_vaccination;
 		}
 
 }

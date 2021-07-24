@@ -30,7 +30,7 @@ class VaccinationManager {
 	//Add vaccination
 	public function add($vaccination){
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
-		$req = "INSERT INTO `vaccination`(`id_vaccin`, `id_enfant`,`date_vaccination`,`poids`) VALUES (:id_vaccin,:id_enfant,:date_vaccination,:poids)";
+		$req = "INSERT INTO `vaccination`(`id_vaccin`, `id_enfant`,`date_vaccination`,`poids` ) VALUES (:id_vaccin,:id_enfant,:date_vaccination,:poids,";
 
 		$addvaccinationQuery = $dbh ->prepare($req);
 		$addvaccinationQuery -> bindParam(":id_vaccin",$vaccination->getid_vaccin(),PDO::PARAM_STR);
@@ -57,7 +57,7 @@ class VaccinationManager {
 	public function update($vaccination){
 		$id_vaccination = $vaccination->getid_vaccination();
 		$dbh = new PDO("mysql:host=localhost;dbname=monvaccin","root","root2021");
-		$req = "UPDATE vaccination SET date_vaccination = :date_vaccination,poids = :poids WHERE id_vaccination = $id_vaccination";
+		$req = "UPDATE vaccination SET date_vaccination = :date_vaccination,poids = :poids  WHERE id_vaccination = $id_vaccination";
 		$updatevaccinationQuery = $dbh ->prepare($req);
 		$updatevaccinationQuery -> bindParam(":date_vaccination",$vaccination->getdate_vaccination(),PDO::PARAM_STR);
 		$updatevaccinationQuery -> bindParam(":poids",$vaccination->getpoids(),PDO::PARAM_STR);
