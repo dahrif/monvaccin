@@ -10,6 +10,9 @@ class Vaccination extends React.Component {
         let done = ''
         done += this.props.vaccination.date_vaccination && this.props.vaccination.poids? 'fait' :'init';
 
+        let del = ''
+        del += this.props.vaccination.date_vaccination || this.props.vaccination.poids ? "far fa-minus-square text-danger" : '';
+
         
 
         return (
@@ -20,7 +23,7 @@ class Vaccination extends React.Component {
                 <td className="align-middle text-center">{this.props.vaccination.description}</td>
                 <td className="align-middle text-center">{this.props.vaccination.date_vaccination}</td>
                 <td className="align-middle text-center">{this.props.vaccination.poids}</td>
-                <td className="align-middle text-center"><i className="far fa-minus-square text-danger"onClick={this.props.onClickClose}/></td>
+                <td className="align-middle text-center"><i className={del} onClick={this.props.onClickClose}/></td>
                 
 
             </tr>

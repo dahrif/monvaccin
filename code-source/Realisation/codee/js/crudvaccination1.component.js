@@ -113,7 +113,7 @@ class Crudenfant extends React.Component {
 
         <div className="container">
           <div id="accordion" className="accordion-container">
-            <div className="accordion-title rounded shadow"> {enfantsArray} </div>
+             {enfantsArray}
 
 
             <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
@@ -159,7 +159,7 @@ class Crudenfant extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-
+                      <Crudvaccination/>
                     </tbody>
                   </table>
 
