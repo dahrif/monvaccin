@@ -18,7 +18,7 @@ class Enfant extends React.Component {
 
 
             <div id="accordion" className="accordion-container">
-                <div className="accordion-title rounded shadow"> {this.props.enfant.nom_enfant}<span> <i className="fas fa-trash" onClick={this.props.onClickdel} ></i></span> <span> <i className="fas fa-edit" onClick={this.props.onClickUpdate}></i></span></div>
+                <div className="accordion-title rounded shadow"> {this.props.enfant.nom_enfant}<span> <i className="fas fa-trash" onClick={this.props.onClickdel} ></i></span> <span> <i className="fas fa-edit" data-toggle="modal" data-target="#exampleModal2" onClick={this.props.onClickUpdate}></i></span></div>
                 <div className="card col-md-12 mx-auto">
 
 
@@ -29,7 +29,7 @@ class Enfant extends React.Component {
 
 
                     <div className="row">
-                        <div className="col-md-4 my-3 mx-auto">
+                        <div className="col-4 my-3 mx-auto">
                             <img src={img} width="120px" alt="user-avatar" className="img-circle img-fluid" />
                         </div>
                         <div className=" col-7 mt-2 ml-3">

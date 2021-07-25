@@ -76,14 +76,14 @@ class Crudenfant extends React.Component {
       method: "POST",
       data: {
         id_enfant: this.state.enfant.id_enfant,
-        nom_enfant: nom_enfant.value,
-        date_naissance: date_naissance.value,
-        poids_naissance: poids_naissance.value,
-        genre: genre.value,
+        nom_enfant: cnom_enfant.value,
+        date_naissance: cdate_naissance.value,
+        poids_naissance: cpoids_naissance.value,
+        genre: cgenre.value,
       },
       success: function (data) {
         this.chargementDonnees()
-        $("#exampleModal1").modal('hide');
+        $("#exampleModal2").modal('hide');
 
       }.bind(this)
     })
@@ -112,9 +112,10 @@ class Crudenfant extends React.Component {
 
     return (
       <div className="container">
-
-        <button className="btn mt-10 " data-toggle="modal" data-target="#exampleModalCenter2" id="ajouter"><i className="nav-icon fas fa-solid fa-plus" />
-        </button>
+        <div className="text-right">
+          <button className="btn btn-primary mb-2 mr-2 " data-toggle="modal" data-target="#exampleModalCenter2" id="ajouter">Ajouter un enfant </button>
+        </div>
+        
 
         <div className="container">
           <div id="accordion" className="accordion-container">
@@ -174,6 +175,7 @@ class Crudenfant extends React.Component {
           </div>
 
         </div>
+        
 
 
 
@@ -229,7 +231,7 @@ class Crudenfant extends React.Component {
 
 
 
-        <div className="modal fade" id="exampleModal1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div className="modal fade" id="exampleModal2" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content edit-form">
               <div className="modal-header">
@@ -240,22 +242,36 @@ class Crudenfant extends React.Component {
               </div>
               <div className="modal-body">
                 <form className="" onSubmit={this.updateenfant.bind(this)}>
+
+                  <div className="form-row">
+                    <div className="col-12">
+                      <label htmlFor="date_naissance">Nom</label>
+                      <input type="text" value={this.state.enfant.nom_enfant} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, nom_enfant: e.target.value } })}  className="form-control cdate_naissance" id="cnom_enfant" />
+                    </div>
+                  </div>
                   <div className="form-row">
                     <div className="col-12">
                       <label htmlFor="input2">Date enfant</label>
-                      <input type="date" value={this.state.enfant.date_enfant} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, date_enfant: e.target.value } })} className="form-control date_enfant" id="cdate_naissance" />
+                      <input type="date" value={this.state.enfant.date_naissance} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, date_naissance: e.target.value } })} className="form-control date_enfant" id="cdate_naissance" />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="col-12">
                       <label htmlFor="input2">Poids</label>
-                      <input type="text" value={this.state.enfant.poids} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, poids: e.target.value } })} className="form-control cpoids" id="cpoids" />
+                      <input type="text" value={this.state.enfant.poids_naissance} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, poids_naissance: e.target.value } })} className="form-control cpoids" id="cpoids_naissance" />
                     </div>
                   </div>
+                  <div className="form-group">
+                    <label htmlFor="genre">Genre</label>
+                    <select value={this.state.enfant.genre} onChange={(e) => this.setState({ enfant: { ...this.state.enfant, genre: e.target.value } })} className="form-control" id="cgenre">
+                      <option>Fille</option>
+                      <option>Garçon</option>
+                    </select>
+                  </div>
 
-                  <input type="hidden" className="sid" />
+                  <input type="hidden" className="id_enfant" />
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-primary save-student">Valider</button>
+                    <button type="submit" className="btn btn-primary">Valider</button>
 
                   </div>
                 </form>
