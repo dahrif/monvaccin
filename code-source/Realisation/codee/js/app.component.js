@@ -23,22 +23,28 @@ class App extends React.Component {
 
 
             <section className="content">
+              <div className="card">
+                <div className="card-header">
+                  <h3 className="card-title">Mes vaccins</h3>
+                  <div className="card-tools">
+                    <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                      <i className="fas fa-minus" />
+                    </button>
+                  </div>
+                </div>
               <div className="card-body">
                 
                 <Crudvaccination />
+              </div>
               </div>
             </section>
             {/* /.content */}
           </div>
           {/* /.content-wrapper */}
-          <footer className="main-footer">
+          <footer className="main-footer text-center">
             <strong>Copyright © 2021 <a href="#">monVaccin</a>.</strong> Tous droits réservés.
           </footer>
-          {/* Control Sidebar */}
-          <aside className="control-sidebar control-sidebar-dark">
-            {/* Control sidebar content goes here */}
-          </aside>
-          {/* /.control-sidebar */}
+
         </div>
 
 
