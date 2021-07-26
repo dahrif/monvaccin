@@ -47,7 +47,7 @@ class SideBar extends React.Component {
 
 
               <div className="text-center align-self-end">
-              <button name="" id="" className="btn btn-danger text-white rounded-pill " href="../login/logout.php" role="button">DECONNEXION</button>
+              <a className="btn btn-danger text-white rounded-pill " href="index.html" role="button">DECONNEXION</a>
               </div>
             
 

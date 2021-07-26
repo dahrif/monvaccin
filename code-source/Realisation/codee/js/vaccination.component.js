@@ -13,10 +13,6 @@ class Vaccination extends React.Component {
         let del = ''
         del += this.props.vaccination.date_vaccination || this.props.vaccination.poids ? "far fa-minus-square text-danger" : '';
 
-    //    let date = "align-middle text-center "
-      //  date += this.props.vaccination.date_vaccination || this.props.vaccination.poids ? 'pas-fait' : 'init';
-
-        
 
         return (
  

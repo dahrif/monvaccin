@@ -44,7 +44,7 @@ class Crudenfant extends React.Component {
       },
       success: function (data) {
         this.chargementDonnees()
-        $("#exampleModalCenter2").modal('hide');
+        $("#exampleModal1").modal('hide');
         console.log(data);
       }.bind(this)
     })
@@ -113,30 +113,14 @@ class Crudenfant extends React.Component {
     return (
       <div className="container">
         <div className="text-right">
-          <button className="btn btn-primary mb-2 mr-2 " data-toggle="modal" data-target="#exampleModalCenter2" id="ajouter">Ajouter un enfant </button>
+          <button className="btn btn-primary mb-2 mr-2 " data-toggle="modal" data-target="#exampleModal1" id="ajouter">Ajouter un enfant </button>
         </div>
         
 
-        <div className="container">
-          <div id="accordion" className="accordion-container">
              {enfantsArray}
 
 
-         
-            <div className="accordion-content">
-              <div className="card col-md-12 mx-auto">
-                {enfantsArray}
-              </div>
-            </div>
-          </div>
-
-        </div>
-        
-
-
-
-
-        <div className="modal fade" id="exampleModalCenter2" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div className="modal fade" id="exampleModal1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
