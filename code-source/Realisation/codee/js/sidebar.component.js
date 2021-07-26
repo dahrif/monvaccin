@@ -24,17 +24,7 @@ class SideBar extends React.Component {
           <nav className="mt-2">
             <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-   
-
-              <li className="nav-item">
-                <a href="vaccin.html" className="nav-link">
-                  <i className="fas fa-stethoscope"/>
-                  <p>Mes vaccins</p>
-                </a>
-              </li>
-              {/* Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library */}
-              <li className="nav-item">
+            <li className="nav-item m-1">
                 <a href="mes-enfants.html" className="nav-link">
                   <i className="fas fa-baby"/>
                   <p>Mes enfants</p>
@@ -42,11 +32,21 @@ class SideBar extends React.Component {
 
               </li>
 
+              <li className="nav-item m-1">
+                <a href="vaccin.html" className="nav-link">
+                  <i className="fas fa-stethoscope"/>
+                  <p>Mes vaccins</p>
+                </a>
+              </li>
+              {/* Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library */}
+              
+
 
             </ul>
 
 
-              <div className="text-center align-self-end">
+              <div className="text-center mt-5">
               <a className="btn btn-danger text-white rounded-pill " href="index.html" role="button">DECONNEXION</a>
               </div>
             

@@ -19,13 +19,9 @@ $parent->created = date('Y-m-d H:i:s');
  
 // create the parent
 if($parent->signup()){
-    $client_arr=array(
-        "status" => true,
-        "message" => "Successfully Signup!",
-        "id_client" => $client->id_client,
-        "lastname" => $client->lastname,
-        "email" => $client->email
-    );
+    
+        header('location:../../login.html');
+  
 }
 else{
     $parent_arr=array(

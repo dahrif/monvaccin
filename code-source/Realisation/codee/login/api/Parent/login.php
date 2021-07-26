@@ -18,13 +18,13 @@ if($stmt->rowCount() > 0){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
    
-    header('location:../../../mes-enfants.html');
+    header('location:../../../index.html');
   
 }
 else{
+    header('location:../../../mes-enfants.html');
 
-    header('location:../../../index.html');
- 
+  
 }
 // make it json format
 print_r(json_encode($parent_arr));
