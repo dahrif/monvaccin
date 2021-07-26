@@ -126,51 +126,7 @@ class Crudenfant extends React.Component {
             <div className="accordion-content">
               <div className="card col-md-12 mx-auto">
                 {enfantsArray}
-
-                <div className="row">
-                  <div className="col-md-4 my-3 mx-auto">
-                    <img src="https://image.flaticon.com/icons/png/512/405/405129.png" width="120px" alt="user-avatar" className="img-circle img-fluid" />
-                  </div>
-                  <div className=" col-7 mt-2 ml-3">
-
-                  </div>
-                  <div className="col-12 text-left">
-
-
-
-                  </div>
-
-                </div>
-
-
-
               </div>
-
-
-              <div className="card">
-                <div className="card-header">
-                  <h3 className="card-title">Mes vaccins</h3>
-                </div>
-                {/* /.card-header */}
-                <div className="card-body table-responsive p-0">
-                  <table className="table table-sm">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th style={{ width: '250px' }}>Nom Vaccin</th>
-                        <th>Description</th>
-                        <th>Date de enfant</th>
-                        <th>Poids</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <Crudvaccination/>
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-
             </div>
           </div>
 

@@ -1,101 +1,89 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon vaccin </title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/dist/css/adminlte.css">
-<link rel="stylesheet" href="/dist/css/style.css">
+<html lang="en">
 
- <!-- Google Font: Source Sans Pro -->
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
- <!-- Font Awesome -->
- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
- <!-- Ionicons -->
- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
- <!-- Tempusdominus Bootstrap 4 -->
- <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <!-- iCheck -->
- <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
- <!-- JQVMap -->
- <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
- <!-- Theme style -->
- <link rel="stylesheet" href="dist/css/adminlte.min.css">
- <!-- overlayScrollbars -->
- <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
- <!-- Daterange picker -->
- <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
- <!-- summernote -->
- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mon vaccin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
 
 <body>
 
-  <div id="app"></div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex justify-content-end">
+      <a href="#about" class="btn btn-primary rounded-pill m-1">INSCRIPTION</a>
+      <a href="/login/register.php" class="btn btn-outline-primary rounded-pill m-1">CONNEXION</a>
 
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-var i;
+    </div>
+  </header><!-- End Header -->
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-  </script>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6 pt-4 pt-lg-0 order-1 order-lg-1 d-flex flex-column">
+          <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
-  <script src='https://unpkg.com/react/umd/react.development.js'></script>
-  <script src='https://unpkg.com/react-dom/umd/react-dom.development.js'></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-      <script type="text/babel" src="js/menu.component.js"></script>
-      <script type="text/babel" src="js/sidebar.component.js"></script>
-  <script type="text/babel" src="js/vaccination.component.js"></script>
-    <script type="text/babel" src="js/enfant.component.js"></script>
-  <script type="text/babel" src="js/enfant.component.js"></script>
-  <script type="text/babel" src="js/crudvaccination.component.js"></script>
-    <script type="text/babel" src="js/crudEnfant.component.js"></script>
-  <script type="text/babel" src="js/app1.component.js"></script>
-  <script type="text/babel" src="js/script1.js"></script>
-  <script src="https://kit.fontawesome.com/98beef4dae.js" crossorigin="anonymous"></script>
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <script src="plugins/sparklines/sparkline.js"></script>
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <script src="dist/js/adminlte.js"></script>
-  <script src="dist/js/demo.js"></script>
-  <script src="dist/js/pages/dashboard.js"></script>
+          <h2> N'oubliez jamais les vaccins de vos enfants nous nous en souviendrons pour vous.</h2>
+          <div><a href="/login/register.php" class="btn-get-started scrollto rounded-pill">Essayez maintenant</a></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 order-2 order-lg-2 hero-img">
+          <img src="assets/img/vaccin.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
 
-  </body>
+  </section><!-- End Hero -->
 
-  </html>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+      <div class="copyright col-12 text-center">
+        &copy; Copyright <strong><span>monVaccin</span></strong>. Tous droits réservés
+      </div>
+
+  </footer><!-- End Footer -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

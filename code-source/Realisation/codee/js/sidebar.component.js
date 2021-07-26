@@ -27,9 +27,9 @@ class SideBar extends React.Component {
    
 
               <li className="nav-item">
-                <a href="acceuil.html" className="nav-link">
-                  <i className="fas fa-home"/>
-                  <p> Accueil</p>
+                <a href="vaccin.html" className="nav-link">
+                  <i className="fas fa-stethoscope"/>
+                  <p>Mes vaccins</p>
                 </a>
               </li>
               {/* Add icons to the links using the .nav-icon class
@@ -37,7 +37,7 @@ class SideBar extends React.Component {
               <li className="nav-item">
                 <a href="mes-enfants.html" className="nav-link">
                   <i className="fas fa-baby"/>
-                  <p> Mes enfants</p>
+                  <p>Mes enfants</p>
                 </a>
 
               </li>

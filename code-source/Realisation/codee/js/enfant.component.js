@@ -17,14 +17,6 @@ class Enfant extends React.Component {
 
 
 
-            <div id="accordion" className="accordion-container">
-                <div className="accordion-title rounded shadow"> {this.props.enfant.nom_enfant}<span> <i className="fas fa-trash" onClick={this.props.onClickdel} ></i></span> <span> <i className="fas fa-edit" data-toggle="modal" data-target="#exampleModal2" onClick={this.props.onClickUpdate}></i></span></div>
-                <div className="card col-md-12 mx-auto">
-
-
-
-                </div>
-
                 <div className="card col-lg-8 col-md-12 mx-auto">
 
 
@@ -37,9 +29,9 @@ class Enfant extends React.Component {
                             <h2 className="lead mt-2"><b>Date de naissance : {this.props.enfant.date_naissance}</b></h2>
                             <h2 className="lead mt-2"><b>Poids à la naissance : {this.props.enfant.poids_naissance}</b></h2>
                         </div>
-                        <div className="col-12 text-left">
+                        <div className="col-12 text-right">
 
-
+                            <i className="fas fa-trash" onClick={this.props.onClickdel} ></i> <i className="fas fa-edit" data-toggle="modal" data-target="#exampleModal2" onClick={this.props.onClickUpdate}></i>
 
                         </div>
 
@@ -47,8 +39,8 @@ class Enfant extends React.Component {
 
 
 
-                </div>                <Crudvaccination />
-            </div>
+                </div>  
+         
 
 
         )

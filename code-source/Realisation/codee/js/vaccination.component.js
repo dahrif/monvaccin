@@ -19,16 +19,15 @@ class Vaccination extends React.Component {
         
 
         return (
+ 
             <tr className={done}>
-                
-                <td className="align-middle text-center"><i data-toggle="modal" data-target="#exampleModal1" className={add} onClick={this.props.onClickUpdate}></i></td>
+                <td scope="row" className="align-middle text-center">{this.props.vaccination.nom_enfant}</td>
                 <td className="align-middle text-center">{this.props.vaccination.nom_vaccin}</td>
                 <td className="align-middle text-center">{this.props.vaccination.description}</td>
                 <td className="align-middle text-center">{this.props.vaccination.date_vaccination}</td>
                 <td className="align-middle text-center">{this.props.vaccination.poids}</td>
+                <td className="align-middle text-center"><i data-toggle="modal" data-target="#exampleModal1" className={add} onClick={this.props.onClickUpdate}></i></td>
                 <td className="align-middle text-center"><i className={del} onClick={this.props.onClickClose}/></td>
-                
-
             </tr>
 
         )

@@ -48,7 +48,7 @@ class Crudvaccination extends React.Component {
     })
     e.preventDefault();
   }
-  
+
   // delete vaccination
   removevaccination(id_vaccination) {
     $.ajax({
@@ -110,28 +110,29 @@ class Crudvaccination extends React.Component {
 
     return (
       <div className="container">
-        
-<div className="card">
 
-        <div className="card-body table-responsive p-0">
-          <table className="table table-sm">
-            <thead>
-              <tr>
-                <th className="align-middle text-center"></th>
-                <th className="align-middle text-center">Nom Vaccin</th>
-                <th className="align-middle text-center">Description</th>
-                <th className="align-middle text-center">Date de vaccination</th>
-                <th className="align-middle text-center">Poids</th>
-                <th className="align-middle text-center"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {vaccinationsArray}
-            </tbody>
-          </table>
+        <div className="card">
 
-        </div>
-       
+          <div className="card-body table-responsive p-0">
+            <table className="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col" className="align-middle text-center">Nom enfant</th>
+                  <th scope="col" className="align-middle text-center">Nom Vaccin</th>
+                  <th scope="col" className="align-middle text-center">Description</th>
+                  <th scope="col" className="align-middle text-center">Date de vaccination</th>
+                  <th scope="col" className="align-middle text-center">Poids</th>
+                  <th scope="col" className="align-middle text-center"></th>
+                  <th scope="col" className="align-middle text-center"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {vaccinationsArray}
+              </tbody>
+            </table>
+
+          </div>
+
         </div>
 
 
