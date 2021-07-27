@@ -16,15 +16,15 @@ body{
     max-width:525px;
     min-height:570px;
     position:relative;
-   
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
   }
   .login-html{
     width:100%;
-    height:100%;
+    height:90vh;
     position:absolute;
-    padding:90px 70px 50px 70px;
-    background:rgba(40,57,101,.9);
+    padding:60px 70px 50px 70px;
+    background:#3454D1
+;
   }
   .login-html .sign-in-htm,
   .login-html .sign-up-htm{
@@ -91,10 +91,7 @@ body{
     text-security:circle;
     -webkit-text-security:circle;
   }
-  .login-form .group .label{
-    color:#aaa;
-    font-size:12px;
-  }
+ 
   .login-form .group .button{
     background:#1161ee;
   }
