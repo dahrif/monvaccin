@@ -23,11 +23,5 @@ if($parent->signup()){
         header('location:../../login.html');
   
 }
-else{
-    $parent_arr=array(
-        "status" => false,
-        "message" => "email already exists!"
-    );
-}
-print_r(json_encode($parent_arr));
+
 ?>
