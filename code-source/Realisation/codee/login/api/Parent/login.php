@@ -18,7 +18,7 @@ if($stmt->rowCount() > 0){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
    
-    header('location:../../../index.html');
+    header('location:../../../mes-enfants.html');
   
 }
 else{
