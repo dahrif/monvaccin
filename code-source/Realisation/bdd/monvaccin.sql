@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 16 juil. 2021 à 17:53
--- Version du serveur :  8.0.24
--- Version de PHP : 8.0.2
+-- Généré le : mer. 11 août 2021 à 18:00
+-- Version du serveur :  10.4.19-MariaDB
+-- Version de PHP : 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,20 +28,34 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `enfant` (
-  `id_enfant` int NOT NULL,
-  `id_parent` int DEFAULT NULL,
+  `id_enfant` int(11) NOT NULL,
+  `id_parent` int(11) DEFAULT NULL,
   `nom_enfant` varchar(50) DEFAULT NULL,
   `date_naissance` varchar(10) DEFAULT NULL,
   `poids_naissance` varchar(10) DEFAULT NULL,
-  `photo_enfant` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `genre` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `enfant`
 --
 
-INSERT INTO `enfant` (`id_enfant`, `id_parent`, `nom_enfant`, `date_naissance`, `poids_naissance`, `photo_enfant`) VALUES
-(1, 1, '1', '1', '1', '1');
+INSERT INTO `enfant` (`id_enfant`, `id_parent`, `nom_enfant`, `date_naissance`, `poids_naissance`, `genre`) VALUES
+(43, NULL, 'Yassin', '2021-07-01', '2', 'Garçon'),
+(44, NULL, 'Soujoud', '2021-07-10', '2.8 kg', 'Fille'),
+(45, NULL, 'jad', '', '', 'Fille'),
+(46, NULL, 'Yassin', '', '', 'Fille'),
+(47, NULL, 'Soujoud', '', '', 'Fille');
+
+--
+-- Déclencheurs `enfant`
+--
+DELIMITER $$
+CREATE TRIGGER `after_insert_enfant` AFTER INSERT ON `enfant` FOR EACH ROW INSERT INTO vaccination ( `id_enfant`,`id_vaccin`)
+SELECT new.id_enfant, id_vaccin from enfant, vaccin
+GROUP BY id_vaccin
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -50,22 +64,27 @@ INSERT INTO `enfant` (`id_enfant`, `id_parent`, `nom_enfant`, `date_naissance`, 
 --
 
 CREATE TABLE `parent` (
-  `id_parent` int NOT NULL,
-  `firstname` varchar(45) NOT NULL,
-  `lastname` varchar(45) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `id_parent` int(11) NOT NULL,
+  `firstname` varchar(45) DEFAULT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
-  `photo_profile` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `photo_profile` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `parent`
 --
 
-INSERT INTO `parent` (`id_parent`, `firstname`, `lastname`, `gender`, `email`, `password`, `phone`, `photo_profile`) VALUES
-(1, 'Dahri', 'Fatima', 'femme', 'dahri.fatima.dev@gmail.com', '123456', '0643905996', '');
+INSERT INTO `parent` (`id_parent`, `firstname`, `lastname`, `gender`, `email`, `password`, `phone`, `photo_profile`, `created`) VALUES
+(1, 'Dahri', 'Fatima', 'femme', 'dahri.fatima.dev@gmail.com', '123456', '0643905996', '', '2021-07-26 21:54:10'),
+(2, NULL, '', NULL, '', '', NULL, NULL, '2021-07-26 20:54:26'),
+(3, NULL, 'CC', NULL, 'exemple@ejxemple.com', 'a2w=', NULL, NULL, '2021-07-26 20:54:49'),
+(4, NULL, 'fatima', NULL, 'exemple@exemple.com', 'MTIz', NULL, NULL, '2021-07-27 07:50:28'),
+(5, NULL, 'fatima', NULL, 'prototype@gmail.com', 'MTIzNDU2', NULL, NULL, '2021-07-27 08:06:18');
 
 -- --------------------------------------------------------
 
@@ -74,10 +93,10 @@ INSERT INTO `parent` (`id_parent`, `firstname`, `lastname`, `gender`, `email`, `
 --
 
 CREATE TABLE `vaccin` (
-  `id_vaccin` int NOT NULL,
+  `id_vaccin` int(11) NOT NULL,
   `nom_vaccin` varchar(50) DEFAULT NULL,
   `description` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vaccin`
@@ -99,25 +118,53 @@ INSERT INTO `vaccin` (`id_vaccin`, `nom_vaccin`, `description`) VALUES
 --
 
 CREATE TABLE `vaccination` (
-  `id_vaccination` int NOT NULL,
-  `id_vaccin` int DEFAULT NULL,
-  `id_enfant` int DEFAULT NULL,
-  `date_vaccination` varchar(10) DEFAULT NULL,
+  `id_vaccination` int(11) NOT NULL,
+  `id_vaccin` int(11) DEFAULT NULL,
+  `id_enfant` int(11) DEFAULT NULL,
+  `date_vaccination` varchar(11) DEFAULT NULL,
   `poids` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vaccination`
 --
 
 INSERT INTO `vaccination` (`id_vaccination`, `id_vaccin`, `id_enfant`, `date_vaccination`, `poids`) VALUES
-(45, 1, NULL, '12/2', '11'),
-(46, 2, NULL, NULL, NULL),
-(47, 3, NULL, NULL, NULL),
-(48, 4, NULL, NULL, NULL),
-(49, 5, NULL, NULL, NULL),
-(50, 6, NULL, NULL, NULL),
-(51, 7, NULL, NULL, NULL);
+(672, 1, 43, '', ''),
+(673, 2, 43, NULL, NULL),
+(674, 3, 43, NULL, NULL),
+(675, 4, 43, NULL, NULL),
+(676, 5, 43, NULL, NULL),
+(677, 6, 43, NULL, NULL),
+(678, 7, 43, NULL, NULL),
+(679, 1, 44, '', ''),
+(680, 2, 44, NULL, NULL),
+(681, 3, 44, NULL, NULL),
+(682, 4, 44, NULL, NULL),
+(683, 5, 44, NULL, NULL),
+(684, 6, 44, NULL, NULL),
+(685, 7, 44, NULL, NULL),
+(686, 1, 45, NULL, NULL),
+(687, 2, 45, NULL, NULL),
+(688, 3, 45, NULL, NULL),
+(689, 4, 45, NULL, NULL),
+(690, 5, 45, NULL, NULL),
+(691, 6, 45, NULL, NULL),
+(692, 7, 45, NULL, NULL),
+(693, 1, 46, NULL, NULL),
+(694, 2, 46, NULL, NULL),
+(695, 3, 46, NULL, NULL),
+(696, 4, 46, NULL, NULL),
+(697, 5, 46, NULL, NULL),
+(698, 6, 46, NULL, NULL),
+(699, 7, 46, NULL, NULL),
+(700, 1, 47, NULL, NULL),
+(701, 2, 47, NULL, NULL),
+(702, 3, 47, NULL, NULL),
+(703, 4, 47, NULL, NULL),
+(704, 5, 47, NULL, NULL),
+(705, 6, 47, NULL, NULL),
+(706, 7, 47, NULL, NULL);
 
 --
 -- Index pour les tables déchargées
@@ -161,25 +208,25 @@ ALTER TABLE `vaccination`
 -- AUTO_INCREMENT pour la table `enfant`
 --
 ALTER TABLE `enfant`
-  MODIFY `id_enfant` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_enfant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT pour la table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `id_parent` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_parent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `vaccin`
 --
 ALTER TABLE `vaccin`
-  MODIFY `id_vaccin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_vaccin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `vaccination`
 --
 ALTER TABLE `vaccination`
-  MODIFY `id_vaccination` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_vaccination` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=707;
 
 --
 -- Contraintes pour les tables déchargées
