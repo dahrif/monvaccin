@@ -200,7 +200,7 @@ class Crudvaccination extends React.Component {
 
                   <input type="hidden" className="id_vaccination" />
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-primary save-student">Valider</button>
+                    <button type="submit" className="btn btn-primary">Valider</button>
 
                   </div>
                 </form>

@@ -17,10 +17,12 @@ class App extends React.Component {
 <div className="login-wrap">
   
         <div className="login-html">
-          <input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked /><label htmlFor="tab-1" className="tab">CONNEXION</label>
-          <input id="tab-2" type="radio" name="tab" className="sign-up" /><label htmlFor="tab-2" className="tab">INSCRIPTION</label>
+          <input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked />
+          <label htmlFor="tab-1" className="tab">CONNEXION</label>
+          <input id="tab-2" type="radio" name="tab" className="sign-up" />
+          <label htmlFor="tab-2" className="tab">INSCRIPTION</label>
           <div className="login-form">
-            <form className="sign-in-htm" action="./api/Parent/login.php" method="GET">
+            <form className="sign-in-htm" action="./api/Parent/login.php" method="POST">
               <div className="group">
                 <label htmlFor="user" className="label">Email</label>
                 <input id="email" name="email" type="text" className="input" />

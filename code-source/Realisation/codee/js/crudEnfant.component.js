@@ -44,8 +44,7 @@ class Crudenfant extends React.Component {
       },
       success: function (data) {
         this.chargementDonnees()
-        $("#exampleModal1").modal('hide');
-        console.log(data);
+        $('#exampleModal').modal('hide');
       }.bind(this)
     })
     e.preventDefault();
@@ -113,14 +112,14 @@ class Crudenfant extends React.Component {
     return (
       <div className="container">
         <div className="text-right">
-          <button className="btn btn-primary mb-2 mr-2 " data-toggle="modal" data-target="#exampleModal1" id="ajouter">Ajouter un enfant </button>
+          <button className="btn btn-primary mb-2 mr-2 " data-toggle="modal" data-target="#exampleModal" id="ajouter">Ajouter un enfant </button>
         </div>
         
 
              {enfantsArray}
 
 
-        <div className="modal fade" id="exampleModal1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div className="modal fade" id="exampleModal" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -153,7 +152,8 @@ class Crudenfant extends React.Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="genre">Genre</label>
-                    <select className="form-control" id="genre">
+                    <select className="form-control" id="genre" required>
+                      <option></option>
                       <option>Fille</option>
                       <option>Garçon</option>
                     </select>

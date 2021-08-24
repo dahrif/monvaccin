@@ -22,7 +22,7 @@ class Enfant extends React.Component {
 
                     <div className="row">
                         <div className="col-4 my-3 mx-auto">
-                            <img src={img} width="120px" alt="user-avatar" className="img-circle img-fluid" />
+                            <img src={img} width="100px" alt="user-avatar" className="img-circle img-fluid" />
                         </div>
                         <div className=" col-7 mt-2 ml-3">
                             <h2 className="lead mt-2"><b>Nom: {this.props.enfant.nom_enfant}</b></h2>

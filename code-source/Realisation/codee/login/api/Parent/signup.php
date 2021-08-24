@@ -20,8 +20,18 @@ $parent->created = date('Y-m-d H:i:s');
 // create the parent
 if($parent->signup()){
     
-        header('location:../../login.html');
+        echo '<script>
+		alert("Votre compte a été bien créé"); 
+		window.location.href="../../../login/login.html";
+		</script>' ;
   
+}
+
+else{
+        echo'<script>
+		alert("Ce compte existe déja"); 
+		window.location.href="../../../login/login.html";
+		</script>' ;
 }
 
 ?>
